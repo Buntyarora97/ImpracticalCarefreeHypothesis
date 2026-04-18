@@ -3,9 +3,6 @@ require_once __DIR__ . '/../database.php';
 
 class Review {
 
-    /* =========================
-       GET ALL REVIEWS (ADMIN)
-    ========================= */
     public static function getAll() {
         try {
             $sql = "
@@ -21,22 +18,19 @@ class Review {
         }
     }
 
-    /* =========================
-       CREATE REVIEW (FRONTEND)
-    ========================= */
     public static function create($data) {
         try {
             $stmt = db()->prepare("
-                INSERT INTO reviews 
-                (product_id, name, rating, comment, is_active, created_at)
-                VALUES (?, ?, ?, ?, 1, NOW())
+                INSERT INTO reviews
+                (product_id, user_name, rating, review_text, created_at)
+                VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
             ");
 
             return $stmt->execute([
                 $data['product_id'],
                 $data['name'] ?? 'Customer',
                 $data['rating'],
-                $data['comment']
+                $data['comment'] ?? $data['review_text'] ?? ''
             ]);
 
         } catch (PDOException $e) {
@@ -45,16 +39,12 @@ class Review {
         }
     }
 
-    /* =========================
-       GET REVIEWS BY PRODUCT
-    ========================= */
     public static function getByProduct($productId) {
         try {
             $stmt = db()->prepare("
                 SELECT *
                 FROM reviews
                 WHERE product_id = ?
-                  AND is_active = 1
                 ORDER BY created_at DESC
             ");
             $stmt->execute([$productId]);

@@ -44,9 +44,9 @@ if (!empty($order['awb_code'])) {
 =========================== */
 if (
     empty($order['shipping_address']) ||
-    empty($order['shipping_city']) ||
-    empty($order['shipping_state']) ||
-    empty($order['shipping_pincode'])
+    empty($order['city']) && empty($order['shipping_city']) ||
+    empty($order['state']) && empty($order['shipping_state']) ||
+    empty($order['pincode']) && empty($order['shipping_pincode'])
 ) {
     die('Incomplete shipping details');
 }
@@ -80,7 +80,7 @@ try {
             order_status = 'processing',
             awb_code = ?,
             shiprocket_order_id = ?,
-            updated_at = NOW()
+            updated_at = CURRENT_TIMESTAMP
         WHERE id = ?
     ");
 

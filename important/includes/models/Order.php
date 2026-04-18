@@ -34,7 +34,7 @@ class Order {
             payment_status, 
             order_status,
             created_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'processing', NOW())";
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', 'processing', CURRENT_TIMESTAMP)";
         
         $stmt = $db->prepare($sql);
         $orderNumber = 'LIV' . date('Ymd') . strtoupper(substr(uniqid(), -6));
@@ -102,7 +102,7 @@ class Order {
             discount_amount=?, 
             total_amount=?, 
             payment_method=?,
-            updated_at = NOW()
+            updated_at = CURRENT_TIMESTAMP
             WHERE id=?";
             
         $stmt = $db->prepare($sql);
@@ -158,7 +158,7 @@ class Order {
     }
 
     public static function updateShiprocketId($id, $shiprocketId) {
-        $stmt = db()->prepare("UPDATE orders SET notes = CONCAT(COALESCE(notes, ''), '\nShiprocket ID: ', ?) WHERE id = ?");
+        $stmt = db()->prepare("UPDATE orders SET notes = COALESCE(notes, '') || '\nShiprocket ID: ' || ? WHERE id = ?");
         return $stmt->execute([$shiprocketId, $id]);
     }
 
