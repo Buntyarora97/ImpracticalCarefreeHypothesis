@@ -12,51 +12,27 @@ require_once 'includes/header.php';
 <section class="glimlach-steps">
 
   <div class="glimlach-step">
-    <img src="assets/images/about/1.jpeg" alt="Step 01">
-  </div>
-
-  <div class="glimlach-step" style="width:100%; height:100%; overflow:hidden;">
-    <video 
-      src="assets/images/about/2.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      style="
-        width:100%;
-        height:auto;
-        object-fit:contain;
-        display:block;
-      "
-    ></video>
+    <img src="assets/images/about/1.png" alt="GLIMLACH - Premium Wellness Laboratory">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/3.jpeg" alt="Step 03">
+    <img src="assets/images/about/2.png" alt="GLIMLACH - Happy Wellness Customer">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/4.jpeg" alt="Step 04">
-  </div>
-
-  <div class="glimlach-step" style="width:100%; height:100%; overflow:hidden;">
-    <video 
-      src="assets/images/about/5.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      style="
-        width:100%;
-        height:auto;
-        object-fit:contain;
-        display:block;
-      "
-    ></video>
+    <img src="assets/images/about/3.png" alt="GLIMLACH - Ayurvedic Wellness Products">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/6.jpeg" alt="Step 06">
+    <img src="assets/images/about/4.png" alt="GLIMLACH - Healthy Indian Lifestyle">
+  </div>
+
+  <div class="glimlach-step">
+    <img src="assets/images/about/5.png" alt="GLIMLACH - Quality Manufacturing">
+  </div>
+
+  <div class="glimlach-step">
+    <img src="assets/images/about/6.png" alt="GLIMLACH - Trusted by Customers">
   </div>
 
 </section>
@@ -69,45 +45,30 @@ require_once 'includes/header.php';
   flex-direction: column;
   gap: 0;
   background: #fff;
-
-  /* 🔥 LINE REMOVE FIX */
   margin-top: 0 !important;
   padding-top: 0 !important;
   border-top: none !important;
 }
 
-/* Each step */
 .glimlach-step {
   width: 100%;
   overflow: hidden;
   border: none;
 }
 
-/* Images */
 .glimlach-step img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* Videos (same as image) */
-.glimlach-step video {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* 🔥 Global HR / border safety (line wahi se aa rahi thi) */
 hr {
   display: none !important;
 }
 
-/* Mobile safe */
 @media (max-width: 768px) {
-  .glimlach-step img,
-  .glimlach-step video {
+  .glimlach-step img {
     width: 100%;
     height: auto;
   }

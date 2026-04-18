@@ -6,7 +6,7 @@ $action = $_GET['action'] ?? '';
 
 if ($action === 'get_active') {
     $db = db();
-    $popup = $db->query("SELECT * FROM video_popups WHERE is_active = TRUE ORDER BY created_at DESC LIMIT 1")->fetch();
+    $popup = $db->query("SELECT * FROM video_popups WHERE is_active = 1 ORDER BY created_at DESC LIMIT 1")->fetch();
     echo json_encode(['success' => true, 'popup' => $popup]);
 } elseif ($action === 'increment_view') {
     $id = $_POST['id'] ?? 0;
