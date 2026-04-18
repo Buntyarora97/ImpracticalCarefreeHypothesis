@@ -206,21 +206,21 @@
     
     <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 lg:gap-10">
         
-        <img src="assets/images/logo/Amazon-Logo-PNG-Pic.png"
+        <img src="assets/images/logo/amazon-logo.png"
              alt="Amazon"
-             style="height:50px; width:auto;">
+             style="height:50px; width:auto; object-fit:contain;">
 
-        <img src="assets/images/logo/Flipkart-Logo.wine.png"
+        <img src="assets/images/logo/flipkart-logo.png"
              alt="Flipkart"
-             style="height:50px; width:auto;">
+             style="height:50px; width:auto; object-fit:contain;">
 
         <img src="assets/images/logo/Zepto_Logo.svg_-1.png"
              alt="Zepto"
-             style="height:52px; width:auto;">
+             style="height:52px; width:auto; object-fit:contain;">
 
         <img src="assets/images/logo/1748510129625.SwiggyInstamart.png"
              alt="Instamart"
-             style="height:50px; width:auto;">
+             style="height:50px; width:auto; object-fit:contain;">
              
     </div>
 </div>

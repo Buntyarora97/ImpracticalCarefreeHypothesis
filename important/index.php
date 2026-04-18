@@ -365,21 +365,21 @@
         <div id="hero-carousel" class="hero-carousel-wrapper group">
             <div class="relative w-full overflow-hidden">
                 <div class="hero-slide active">
-                    <img src="assets/images/banners/glimlach-hero-1.svg" class="desktop-only">
-                    <img src="assets/images/banners/glimlach-hero-1.svg" class="mobile-only">
+                    <img src="assets/images/banners/glimlach-hero-1.png" class="desktop-only">
+                    <img src="assets/images/banners/glimlach-hero-1.png" class="mobile-only">
                 </div>
                 
                   <div class="hero-slide">
-                    <img src="assets/images/banners/glimlach-hero-2.svg" class="desktop-only">
-                    <img src="assets/images/banners/glimlach-hero-2.svg" class="mobile-only">
+                    <img src="assets/images/banners/glimlach-hero-2.png" class="desktop-only">
+                    <img src="assets/images/banners/glimlach-hero-2.png" class="mobile-only">
                 </div>
                 <div class="hero-slide">
-                    <img src="assets/images/banners/glimlach-hero-3.svg" class="desktop-only">
-                    <img src="assets/images/banners/glimlach-hero-3.svg" class="mobile-only">
+                    <img src="assets/images/banners/glimlach-hero-3.png" class="desktop-only">
+                    <img src="assets/images/banners/glimlach-hero-3.png" class="mobile-only">
                 </div>
                 <div class="hero-slide">
-                    <img src="assets/images/banners/glimlach-hero-4.svg" class="desktop-only">
-                    <img src="assets/images/banners/glimlach-hero-4.svg" class="mobile-only">
+                    <img src="assets/images/banners/glimlach-hero-4.png" class="desktop-only">
+                    <img src="assets/images/banners/glimlach-hero-4.png" class="mobile-only">
                 </div>
                 <!--<div class="hero-slide">-->
                 <!--    <img src="assets/images/herobanner/4%20copy.jpg%20(3).jpeg" class="desktop-only">-->
@@ -2001,7 +2001,7 @@ document.querySelectorAll('.reel-video video').forEach(video => {
             <div class="pas-left">
                 <div class="pas-badge">Naturally Crafted</div>
                 <div class="pas-main-img-container">
-                    <img id="pasMainImg" src="assets/images/banners/glimlach-hero-1.svg" alt="Main Product">
+                    <img id="pasMainImg" src="assets/images/banners/glimlach-hero-1.png" alt="Main Product">
                 </div>
                 <div class="pas-thumbs">
                     <img src="assets/products-banners/showcase-1.png" class="active" data-image="assets/products-banners/showcase-1.png" alt="Wellness Supplements">
@@ -3490,15 +3490,15 @@ window.addEventListener('resize', function() {
     <section class="glimlach-steps">
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/step-01.jpg" alt="Step 01">
+        <img src="assets/images/banners/step-01.png" alt="Step 01">
       </div>
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/step-02.jpg" alt="Step 02">
+        <img src="assets/images/banners/step-02.png" alt="Step 02">
       </div>
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/step-03.jpg" alt="Step 03">
+        <img src="assets/images/banners/step-03.png" alt="Step 03">
       </div>
     
     </section>
@@ -3549,7 +3549,7 @@ window.addEventListener('resize', function() {
 
    <!-- CARD 1 -->
 <div style="position:relative; border-radius:20px; overflow:hidden; padding:40px; color:#222;
-background:url('assets/images/banners/glimlach-hero-1.svg') center/cover no-repeat;
+background:url('assets/images/banners/glimlach-hero-1.png') center/cover no-repeat;
 animation:fadeUp 1s ease;">
         
         <span style="background:#ffd54f; padding:8px 18px; border-radius:20px; font-size:14px; font-weight:bold;">
@@ -3577,7 +3577,7 @@ animation:fadeUp 1s ease;">
       <!-- CARD 2 -->
    <!-- CARD 2 -->
 <div style="position:relative; border-radius:20px; overflow:hidden; padding:40px; color:#222;
-background:url('assets/images/banners/glimlach-hero-2.svg') center/cover no-repeat;
+background:url('assets/images/banners/glimlach-hero-2.png') center/cover no-repeat;
 animation:fadeUp 1.4s ease;">
         
         <span style="background:#ffd54f; padding:8px 18px; border-radius:20px; font-size:14px; font-weight:bold;">
@@ -3609,7 +3609,7 @@ animation:fadeUp 1.4s ease;">
  <!-- RIGHT BIG -->
 <div style="flex:2; min-width:320px; position:relative; 
 border-radius:25px; overflow:hidden;
-background:url('assets/images/banners/glimlach-hero-3.svg') center/cover no-repeat;
+background:url('assets/images/banners/glimlach-hero-3.png') center/cover no-repeat;
 padding:60px 40px;
 color:white;
 animation:fadeIn 1.2s ease;">
@@ -6841,7 +6841,7 @@ function toggleGlimlachFAQ(element) {
             position: relative;
             width: 100%;
             min-height: 520px;
-            background: url("assets/images/offer%20banner.jpg") center/cover no-repeat;
+            background: url("assets/images/offer-banner.png") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;

@@ -60,3 +60,63 @@ id = "i456QmiB8QOE1VwO5O06_"
 uri = "file://important/assets/images/banners/hero-wellness.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "VGSb80-meu32MmzHmf6bm"
+uri = "file://important/assets/images/banners/glimlach-hero-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "EvDjl6D8Cob-z0oH9k928"
+uri = "file://important/assets/images/banners/glimlach-hero-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "mQFE3ThRzESvHXq4b-b7H"
+uri = "file://important/assets/images/banners/glimlach-hero-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_eVsj4DtFf18B-UOBStMz"
+uri = "file://important/assets/images/banners/glimlach-hero-4.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "rTSsKgEv_xLUytTJt6L8M"
+uri = "file://important/assets/images/banners/step-01.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "AymcAeLlzF0cMMK5KKBrV"
+uri = "file://important/assets/images/banners/step-02.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "16dCyAWbH-Qu94pyEHj1N"
+uri = "file://important/assets/images/banners/step-03.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "tYmrqoVWZUcDcC3fy4cgM"
+uri = "file://important/assets/images/offer-banner.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "WTAiUDD4uEmM2CjPAtNRt"
+uri = "file://important/assets/images/logo/amazon-logo.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "QnZq2S0m7WebJuv_1c6Tp"
+uri = "file://important/assets/images/logo/flipkart-logo.png"
+type = "image"
+title = "generated_image"
