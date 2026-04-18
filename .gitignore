@@ -1,0 +1,8 @@
+vendor/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+important/data/*.sqlite
+important/instamojo_debug.log
