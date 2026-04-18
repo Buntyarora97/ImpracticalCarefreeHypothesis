@@ -282,7 +282,9 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll("img").forEach(img => {
-        img.setAttribute("loading", "lazy");
+        if (!img.hasAttribute("loading")) {
+            img.setAttribute("loading", "lazy");
+        }
     });
 });
 </script>

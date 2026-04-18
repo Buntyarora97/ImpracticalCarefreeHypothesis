@@ -12,27 +12,27 @@ require_once 'includes/header.php';
 <section class="glimlach-steps">
 
   <div class="glimlach-step">
-    <img src="assets/images/about/1.png" alt="GLIMLACH - Premium Wellness Laboratory">
+    <img src="assets/images/about/1.png" alt="GLIMLACH - Premium Wellness Laboratory" loading="eager">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/2.png" alt="GLIMLACH - Happy Wellness Customer">
+    <img src="assets/images/about/2.png" alt="GLIMLACH - Happy Wellness Customer" loading="eager">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/3.png" alt="GLIMLACH - Ayurvedic Wellness Products">
+    <img src="assets/images/about/3.png" alt="GLIMLACH - Ayurvedic Wellness Products" loading="eager">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/4.png" alt="GLIMLACH - Healthy Indian Lifestyle">
+    <img src="assets/images/about/4.png" alt="GLIMLACH - Healthy Indian Lifestyle" loading="eager">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/5.png" alt="GLIMLACH - Quality Manufacturing">
+    <img src="assets/images/about/5.png" alt="GLIMLACH - Quality Manufacturing" loading="eager">
   </div>
 
   <div class="glimlach-step">
-    <img src="assets/images/about/6.png" alt="GLIMLACH - Trusted by Customers">
+    <img src="assets/images/about/6.png" alt="GLIMLACH - Trusted by Customers" loading="eager">
   </div>
 
 </section>
@@ -52,15 +52,15 @@ require_once 'includes/header.php';
 
 .glimlach-step {
   width: 100%;
-  overflow: hidden;
   border: none;
+  line-height: 0;
 }
 
 .glimlach-step img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  max-width: 100%;
 }
 
 hr {
