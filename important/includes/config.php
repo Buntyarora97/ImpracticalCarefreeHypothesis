@@ -131,9 +131,9 @@ function e($text) {
 function productUrl($product) {
     $slug = $product['slug'] ?? '';
     if ($slug) {
-        return '/' . ltrim($slug, '/');
+        return 'product-detail.php?slug=' . urlencode($slug);
     }
-    return '/product-detail.php?id=' . ($product['id'] ?? 0);
+    return 'product-detail.php?id=' . ($product['id'] ?? 0);
 }
 
 function getCartCount() {

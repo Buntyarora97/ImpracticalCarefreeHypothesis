@@ -36,7 +36,7 @@ $items = Order::getItems($id);
     <div class="sidebar">
         <div style="padding: 30px; text-align: center;">
             <img src="../assets/images/logo.png" style="width: 80px;">
-            <h2 style="margin-top: 10px; font-size: 1.2rem;">LIVVRA Admin</h2>
+            <h2 style="margin-top: 10px; font-size: 1.2rem;">GLIMLACH Admin</h2>
         </div>
         <a href="dashboard.php" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="products.php" class="nav-item"><i class="fas fa-box"></i> Products</a>

@@ -1,0 +1,62 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "i5zA7xeAbXmJgrquYM5sa"
+uri = "file://important/uploads/stories/story-neha.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "5Fhm3_Bn-9PtKyxwblkm8"
+uri = "file://important/uploads/stories/story-rohit.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "_Wcf9eZiBpb8G9m754wX0"
+uri = "file://important/uploads/stories/story-priya.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "BXPIrI_ivbTAUkeZRpMB6"
+uri = "file://important/uploads/stories/story-amit.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "DMzkf8AJYwYom5T3Ht6cs"
+uri = "file://important/uploads/stories/story-sunita.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "6CXgNSgiw02xFcNMyBHAu"
+uri = "file://important/assets/products-banners/showcase-1.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "cR11ZGtUChNeUKEqpcNeK"
+uri = "file://important/assets/products-banners/showcase-2.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "xxmiuOGCtAeCh3r6ly5qz"
+uri = "file://important/assets/products-banners/showcase-3.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "7Y7YO4tzxkZAT1_Q8gnot"
+uri = "file://important/assets/images/placeholder.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "i456QmiB8QOE1VwO5O06_"
+uri = "file://important/assets/images/banners/hero-wellness.png"
+type = "image"
+title = "generated_image"

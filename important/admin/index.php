@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Login - LIVVRA</title>
+    <title>Admin Login - GLIMLACH</title>
     <link rel="stylesheet" href="assets/css/admin.css">
     <style>
         body { background: #f4f7f6; height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; font-family: 'Poppins', sans-serif; }

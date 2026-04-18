@@ -1338,12 +1338,11 @@ if (!empty($featuredProducts) && is_array($featuredProducts)) {
                         <!-- Static fallback for preview -->
                         <?php 
                         $demo_stories = [
-                            ['name' => 'Bholanath', 'text' => 'Used it as whey protein supplements post...', 'img' => 'uploads/stories/1.png'],
-                            ['name' => 'Dinesh', 'text' => 'I consumed many whey proteins but I got very...', 'img' => 'uploads/stories/2.png'],
-                            ['name' => 'Sonu Bhardwaj', 'text' => 'After using kapiva shilajit gold.. I feel the...', 'img' => 'uploads/stories/3.png'],
-                            ['name' => 'Masarat Jahan', 'text' => 'I ordered for my brother and he is more energe...', 'img' => 'uploads/stories/4.png'],
-                            ['name' => 'Shivam', 'text' => 'Never switching back to other proteins again....', 'img' => 'uploads/stories/5.png'],
-                            ['name' => 'Prabhjot Gill', 'text' => 'Happy to use the product able to do the...', 'img' => 'uploads/stories/6.png']
+                            ['name' => 'Neha', 'text' => 'GLIMLACH products fit perfectly into my daily wellness routine!', 'img' => 'uploads/stories/story-neha.png'],
+                            ['name' => 'Rohit', 'text' => 'The nutrition range is easy to understand and affordable.', 'img' => 'uploads/stories/story-rohit.png'],
+                            ['name' => 'Priya', 'text' => 'I started using GLIMLACH Glutathione and my skin looks radiant!', 'img' => 'uploads/stories/story-priya.png'],
+                            ['name' => 'Amit', 'text' => 'Marine Collagen from GLIMLACH is fantastic. Totally worth it!', 'img' => 'uploads/stories/story-amit.png'],
+                            ['name' => 'Sunita', 'text' => 'My whole family uses GLIMLACH supplements now. Best quality!', 'img' => 'uploads/stories/story-sunita.png'],
                         ];
                         foreach($demo_stories as $s): ?>
                             <div class="story-card">
@@ -2005,9 +2004,9 @@ document.querySelectorAll('.reel-video video').forEach(video => {
                     <img id="pasMainImg" src="assets/images/banners/glimlach-hero-1.svg" alt="Main Product">
                 </div>
                 <div class="pas-thumbs">
-                    <img src="assets/images/banners/glimlach-hero-2.svg" class="active" data-image="assets/products-banners/WhatsApp%20Image%202026-03-19%20at%203.36.10%20PM%20(2).jpeg" alt="Thumb 1">
-                    <img src="assets/images/banners/glimlach-hero-3.svg" data-image="assets/products-banners/WhatsApp%20Image%202026-03-19%20at%203.36.10%20PM%20(3).jpeg" alt="Thumb 2">
-                    <img src="assets/images/banners/glimlach-hero-4.svg" data-image="assets/products-banners/WhatsApp%20Image%202026-03-19%20at%203.36.10%20PM%20(4).jpeg" alt="Thumb 3">
+                    <img src="assets/products-banners/showcase-1.png" class="active" data-image="assets/products-banners/showcase-1.png" alt="Wellness Supplements">
+                    <img src="assets/products-banners/showcase-2.png" data-image="assets/products-banners/showcase-2.png" alt="Skincare Products">
+                    <img src="assets/products-banners/showcase-3.png" data-image="assets/products-banners/showcase-3.png" alt="Nutrition Products">
                 </div>
             </div>
     
@@ -3421,7 +3420,7 @@ function buyNow(productId) {
     if (product) {
         showToast(`Processing: ${product.name}...`);
         setTimeout(() => {
-            const url = product.slug ? `/${product.slug}` : `product-detail.php?id=${productId}`;
+            const url = product.slug ? `product-detail.php?slug=${encodeURIComponent(product.slug)}` : `product-detail.php?id=${productId}`;
             window.location.href = url;
         }, 600);
     }
@@ -3491,15 +3490,15 @@ window.addEventListener('resize', function() {
     <section class="glimlach-steps">
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/1.jpg (3).jpeg" alt="Step 01">
+        <img src="assets/images/banners/step-01.jpg" alt="Step 01">
       </div>
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/2 copy.jpg (3).jpeg" alt="Step 02">
+        <img src="assets/images/banners/step-02.jpg" alt="Step 02">
       </div>
     
       <div class="glimlach-step">
-        <img src="assets/images/banners/3 copy.jpg (1).jpeg" alt="Step 03">
+        <img src="assets/images/banners/step-03.jpg" alt="Step 03">
       </div>
     
     </section>
@@ -3788,7 +3787,7 @@ animation:fadeIn 1.2s ease;">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="livvrareview.php" class="lvv-btn lvv-btn--secondary">
+                    <a href="products.php" class="lvv-btn lvv-btn--secondary">
                         <span class="lvv-btn__text">Read Reviews</span>
                         <div class="lvv-btn__avatars">
                             <img src="https://i.pravatar.cc/150?img=11" alt="Customer" class="lvv-btn__avatar-img">

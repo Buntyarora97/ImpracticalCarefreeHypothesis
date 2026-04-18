@@ -35,7 +35,7 @@ require_once __DIR__ . '/views/layouts/header.php';
         <div class="form-grid">
             <div class="form-group">
                 <label>Site Name</label>
-                <input type="text" name="settings[site_name]" class="form-control" value="<?php echo htmlspecialchars($settings['site_name'] ?? 'LIVVRA'); ?>">
+                <input type="text" name="settings[site_name]" class="form-control" value="<?php echo htmlspecialchars($settings['site_name'] ?? 'GLIMLACH'); ?>">
             </div>
             <div class="form-group">
                 <label>Contact Email</label>

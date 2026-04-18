@@ -125,7 +125,7 @@ foreach ($items as $item) {
 $orderData = [
     'order_number'     => $order['order_number'] ?? ('ORD' . $orderId),
     'customer_name'    => $order['customer_name'],
-    'customer_email'   => $order['customer_email'] ?? 'support@livvra.in',
+    'customer_email'   => $order['customer_email'] ?? 'support@glimlach.in',
     'customer_phone'   => $order['customer_phone'],
     'shipping_address' => $shippingAddress,
     'city'             => $shippingCity,
