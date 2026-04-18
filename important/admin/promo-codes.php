@@ -24,20 +24,20 @@ function runMigration($db) {
                     id SERIAL PRIMARY KEY, code VARCHAR(50) NOT NULL UNIQUE,
                     influencer_name VARCHAR(100) DEFAULT NULL, influencer_email VARCHAR(255) DEFAULT NULL,
                     discount_type VARCHAR(20) DEFAULT 'percentage', discount_value DECIMAL(10,2) DEFAULT 0,
-                    max_discount DECIMAL(10,2) DEFAULT 0, min_order_amount DECIMAL(10,2) DEFAULT 0,
-                    usage_limit INTEGER DEFAULT 0, used_count INTEGER DEFAULT 0,
+                    max_discount DECIMAL(10,2) DEFAULT 0, min_order DECIMAL(10,2) DEFAULT 0,
+                    max_uses INTEGER DEFAULT 0, used_count INTEGER DEFAULT 0,
                     commission_type VARCHAR(20) DEFAULT 'percentage', commission_value DECIMAL(10,2) DEFAULT 0,
-                    expiry_date DATE DEFAULT NULL, is_active INTEGER DEFAULT 1,
+                    expires_at DATE DEFAULT NULL, is_active INTEGER DEFAULT 1,
                     notes TEXT DEFAULT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)");
             } else {
                 $db->exec("CREATE TABLE IF NOT EXISTS `promo_codes` (
                     `id` INT AUTO_INCREMENT PRIMARY KEY, `code` VARCHAR(50) NOT NULL UNIQUE,
                     `influencer_name` VARCHAR(100) DEFAULT NULL, `influencer_email` VARCHAR(255) DEFAULT NULL,
                     `discount_type` VARCHAR(20) DEFAULT 'percentage', `discount_value` DECIMAL(10,2) DEFAULT 0,
-                    `max_discount` DECIMAL(10,2) DEFAULT 0, `min_order_amount` DECIMAL(10,2) DEFAULT 0,
-                    `usage_limit` INT DEFAULT 0, `used_count` INT DEFAULT 0,
+                    `max_discount` DECIMAL(10,2) DEFAULT 0, `min_order` DECIMAL(10,2) DEFAULT 0,
+                    `max_uses` INT DEFAULT 0, `used_count` INT DEFAULT 0,
                     `commission_type` VARCHAR(20) DEFAULT 'percentage', `commission_value` DECIMAL(10,2) DEFAULT 0,
-                    `expiry_date` DATE DEFAULT NULL, `is_active` INT DEFAULT 1,
+                    `expires_at` DATE DEFAULT NULL, `is_active` INT DEFAULT 1,
                     `notes` TEXT DEFAULT NULL, `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
             }
@@ -120,9 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } else {
                     $stmt = $db->prepare("INSERT INTO promo_codes 
                         (code, influencer_name, influencer_email, discount_type, discount_value, max_discount,
-                         min_order_amount, usage_limit, commission_type, commission_value, expiry_date, notes, is_active)
+                         min_order, max_uses, commission_type, commission_value, expires_at, notes, is_active)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)");
-                    $expiry = !empty($_POST['expiry_date']) ? $_POST['expiry_date'] : null;
+                    $expiry = !empty($_POST['expires_at']) ? $_POST['expires_at'] : null;
                     if ($stmt->execute([
                         $code,
                         trim($_POST['influencer_name'] ?? ''),
@@ -130,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $_POST['discount_type'],
                         (float)$_POST['discount_value'],
                         (float)($_POST['max_discount'] ?? 0),
-                        (float)($_POST['min_order_amount'] ?? 0),
-                        (int)($_POST['usage_limit'] ?? 0),
+                        (float)($_POST['min_order'] ?? 0),
+                        (int)($_POST['max_uses'] ?? 0),
                         $_POST['commission_type'] ?? 'percentage',
                         (float)($_POST['commission_value'] ?? 0),
                         $expiry,
@@ -174,7 +174,7 @@ $promos = [];
 try {
     $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
     $groupBy = ($driver === 'pgsql')
-        ? "GROUP BY p.id, p.code, p.influencer_name, p.influencer_email, p.discount_type, p.discount_value, p.max_discount, p.min_order_amount, p.usage_limit, p.used_count, p.commission_type, p.commission_value, p.expiry_date, p.is_active, p.notes, p.created_at"
+        ? "GROUP BY p.id, p.code, p.influencer_name, p.influencer_email, p.discount_type, p.discount_value, p.max_discount, p.min_order, p.max_uses, p.used_count, p.commission_type, p.commission_value, p.expires_at, p.is_active, p.notes, p.created_at"
         : "GROUP BY p.id";
     
     $promos = $db->query("
@@ -319,11 +319,11 @@ require_once __DIR__ . '/views/layouts/header.php';
                 </div>
                 <div class="form-group">
                     <label>Min Order Amount (₹)</label>
-                    <input type="number" step="0.01" min="0" name="min_order_amount" placeholder="0" value="0">
+                    <input type="number" step="0.01" min="0" name="min_order" placeholder="0" value="0">
                 </div>
                 <div class="form-group">
                     <label>Usage Limit <small style="font-weight:400">(0=unlimited)</small></label>
-                    <input type="number" min="0" name="usage_limit" placeholder="0" value="0">
+                    <input type="number" min="0" name="max_uses" placeholder="0" value="0">
                 </div>
                 <div class="form-group">
                     <label>Commission Type</label>
@@ -338,7 +338,7 @@ require_once __DIR__ . '/views/layouts/header.php';
                 </div>
                 <div class="form-group">
                     <label>Expiry Date <small style="font-weight:400">(optional)</small></label>
-                    <input type="date" name="expiry_date">
+                    <input type="date" name="expires_at">
                 </div>
                 <div class="form-group">
                     <label>Notes</label>
@@ -406,7 +406,7 @@ require_once __DIR__ . '/views/layouts/header.php';
                             <div style="font-size:11px;color:#9ca3af;">Max: ₹<?= $p['max_discount'] ?></div>
                         <?php endif; ?>
                     </td>
-                    <td>₹<?= number_format($p['min_order_amount'] ?? 0, 0) ?></td>
+                    <td>₹<?= number_format($p['min_order'] ?? 0, 0) ?></td>
                     <td class="commission-cell">
                         <?php
                         $cv = $p['commission_value'] ?? 0;
@@ -419,7 +419,7 @@ require_once __DIR__ . '/views/layouts/header.php';
                     </td>
                     <td style="font-weight:700;color:#2563eb;"><?= $p['total_orders'] ?? 0 ?></td>
                     <td class="revenue-cell">₹<?= number_format($p['total_revenue'] ?? 0, 0) ?></td>
-                    <td style="font-size:13px;"><?= $p['expiry_date'] ? date('d M Y', strtotime($p['expiry_date'])) : '<span style="color:#9ca3af">No Expiry</span>' ?></td>
+                    <td style="font-size:13px;"><?= $p['expires_at'] ? date('d M Y', strtotime($p['expires_at'])) : '<span style="color:#9ca3af">No Expiry</span>' ?></td>
                     <td>
                         <span class="status-badge <?= ($p['is_active'] ?? 0) ? 'active' : 'inactive' ?>">
                             <?= ($p['is_active'] ?? 0) ? 'Active' : 'Inactive' ?>

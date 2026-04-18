@@ -133,9 +133,9 @@ require_once __DIR__ . '/views/layouts/header.php';
                 <span class="<?= $promo['is_active'] ? 'badge-active' : 'badge-inactive' ?>">
                     <?= $promo['is_active'] ? 'Active' : 'Inactive' ?>
                 </span>
-                <?php if ($promo['expiry_date']): ?>
+                <?php if ($promo['expires_at']): ?>
                     <span style="font-size:13px; color:#9ca3af; margin-left:10px;">
-                        Expiry: <?= date('d M Y', strtotime($promo['expiry_date'])) ?>
+                        Expiry: <?= date('d M Y', strtotime($promo['expires_at'])) ?>
                     </span>
                 <?php endif; ?>
             </div>
@@ -188,11 +188,11 @@ require_once __DIR__ . '/views/layouts/header.php';
         </div>
         <div class="info-box">
             <div class="info-label">Min Order Amount</div>
-            <div class="info-val">₹<?= number_format($promo['min_order_amount'], 0) ?></div>
+            <div class="info-val">₹<?= number_format($promo['min_order'], 0) ?></div>
         </div>
         <div class="info-box">
             <div class="info-label">Usage</div>
-            <div class="info-val"><?= $promo['used_count'] ?> / <?= $promo['usage_limit'] > 0 ? $promo['usage_limit'] : '∞' ?></div>
+            <div class="info-val"><?= $promo['used_count'] ?> / <?= $promo['max_uses'] > 0 ? $promo['max_uses'] : '∞' ?></div>
         </div>
     </div>
 

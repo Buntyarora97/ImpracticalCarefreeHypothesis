@@ -227,7 +227,7 @@ require_once __DIR__ . '/views/layouts/header.php';
                 <td><strong><?php echo htmlspecialchars($p['name']); ?></strong></td>
                 <td><?php echo htmlspecialchars($p['category_name'] ?? 'Uncategorized'); ?></td>
                 <td>₹<?php echo number_format($p['price'], 2); ?></td>
-                <td><?php echo $p['stock_quantity']; ?></td>
+                <td><?php echo $p['stock_qty']; ?></td>
                 <td>
                     <span class="badge <?php echo $p['is_active'] ? 'badge-success' : 'badge-danger'; ?>">
                         <?php echo $p['is_active'] ? 'ACTIVE' : 'INACTIVE'; ?>

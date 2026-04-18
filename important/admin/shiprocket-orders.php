@@ -20,7 +20,7 @@ require_once 'views/layouts/header.php';
    FETCH SHIPPED ORDERS
 ========================= */
 
-$stmt = db()->prepare("SELECT * FROM orders WHERE shipment_status = 'shipped' ORDER BY created_at DESC");
+$stmt = db()->prepare("SELECT * FROM orders WHERE order_status = 'shipped' ORDER BY created_at DESC");
 $stmt->execute();
 $shipOrders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Shiprocket::createOrder($orderData);
@@ -71,7 +71,7 @@ $shipOrders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <td>
                     <span class="badge badge-success">
-                        <?php echo strtoupper($order['shipment_status']); ?>
+                        <?php echo strtoupper($order['order_status']); ?>
                     </span>
                 </td>
 

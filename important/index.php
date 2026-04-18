@@ -273,24 +273,14 @@
             position: relative;
             background: #f4f4f4;
         }
-        /* Maintain Aspect Ratio for Screenshot Style (Approx 3:1 or 2.5:1 for desktop) */
         .hero-carousel-wrapper {
             position: relative;
             width: 100%;
-            /* For desktop, let it follow image aspect ratio, but constrain height if needed */
-            max-height: 500px; 
-            overflow: hidden;
         }
         .hero-slide img {
             width: 100%;
             height: auto;
-            object-fit: cover;
             display: block;
-        }
-        @media (max-width: 768px) {
-            .hero-carousel-wrapper {
-                max-height: none; /* Let mobile banners define height */
-            }
         }
         /* Slider dots styling */
         .glider-dot {
@@ -363,7 +353,7 @@
     
     <main class="hero-container">
         <div id="hero-carousel" class="hero-carousel-wrapper group">
-            <div class="relative w-full overflow-hidden">
+            <div class="relative w-full">
                 <div class="hero-slide active">
                     <img src="assets/images/banners/glimlach-hero-1.png" class="desktop-only">
                     <img src="assets/images/banners/glimlach-hero-1.png" class="mobile-only">

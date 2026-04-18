@@ -234,6 +234,8 @@ class Database {
             phone VARCHAR(20) DEFAULT NULL,
             message TEXT DEFAULT NULL,
             status VARCHAR(50) DEFAULT 'new',
+            handled_by INTEGER DEFAULT NULL,
+            handled_at TIMESTAMP DEFAULT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )");
 
@@ -275,6 +277,14 @@ class Database {
             discount_given DECIMAL(10,2) DEFAULT 0,
             commission_earned DECIMAL(10,2) DEFAULT 0,
             used_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )");
+
+        $this->pdo->exec("CREATE TABLE IF NOT EXISTS pincodes (
+            id SERIAL PRIMARY KEY,
+            pincode VARCHAR(10) NOT NULL UNIQUE,
+            delivery_days INTEGER DEFAULT 3,
+            is_serviceable INTEGER DEFAULT 1,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )");
 
         $count = (int)$this->pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();

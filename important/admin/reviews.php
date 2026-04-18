@@ -54,10 +54,10 @@ require_once __DIR__ . '/views/layouts/header.php';
                             <?php endfor; ?>
                         </div>
                     </td>
-                    <td><?php echo htmlspecialchars($review['comment']); ?></td>
+                    <td><?php echo htmlspecialchars($review['review_text'] ?? ''); ?></td>
                     <td>
-                        <span class="badge badge-<?php echo $review['status'] === 'approved' ? 'success' : 'warning'; ?>">
-                            <?php echo ucfirst($review['status']); ?>
+                        <span class="badge badge-<?php echo ($review['status'] ?? 'pending') === 'approved' ? 'success' : 'warning'; ?>">
+                            <?php echo ucfirst($review['status'] ?? 'pending'); ?>
                         </span>
                     </td>
                     <td><?php echo date('d M Y', strtotime($review['created_at'])); ?></td>
