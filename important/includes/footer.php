@@ -133,7 +133,7 @@
 }
 </style>
                 <div class="footer-address hidden md:block">
-                   <strong>GLIMLACH</strong> <br>Premium health, wellness and personal care products for everyday routines.<br>India
+                   <strong>GLIMLACH</strong> <br>Premium health, wellness and personal care products for everyday routines.<br>Delhi, Delhi, 110044, India
                 </div>
                 
                 <div class="mb-6 flex items-center gap-4">
@@ -146,7 +146,7 @@
 
                 <div class="flex items-center gap-3 mb-4">
                     <i data-lucide="phone" class="w-5 h-5 text-black"></i>
-                    <span class="footer-contact-text">8958489684</span>
+                    <span class="footer-contact-text">8882728239</span>
                      
                 </div>
                 <div class="flex items-center gap-3">
@@ -190,7 +190,7 @@
                 <h3 class="footer-heading">FOLLOW US</h3>
                 <div class="flex items-center justify-center md:justify-start gap-6">
                     <a href="https://www.instagram.com/glimlach.india/" class="social-icon-link"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="w-8 h-8" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/profile.php?id=61552761808638" class="social-icon-link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="w-8 h-8" alt="Facebook"></a>
+                    <a href="https://www.facebook.com/Glimlachofficial/" class="social-icon-link"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="w-8 h-8" alt="Facebook"></a>
                     <a href="https://youtube.com/shorts/utlejtcyFEI?si=YJQBeS8qFfT9x0h4" class="social-icon-link"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" class="w-8 h-8" alt="YouTube"></a>
                    
                 </div>

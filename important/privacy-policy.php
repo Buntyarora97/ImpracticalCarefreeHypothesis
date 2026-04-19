@@ -4,273 +4,148 @@ $page_title = "Privacy Policy - GLIMLACH";
 include 'includes/header.php';
 ?>
 
-<div class="page-header" style="background: var(--dark); padding: 100px 0 50px; text-align: center; color: white;">
-    <div class="container">
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color:black;">
-            Privacy Policy
-        </h1>
-        <p style="color:black;">
-            Glimlach Wellness Private Limited
-        </p>
-    </div>
+<style>
+.policy-hero {
+    background: linear-gradient(135deg, #123d35 0%, #1a5c50 100%);
+    padding: 80px 0 50px;
+    text-align: center;
+}
+.policy-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.policy-hero p {
+    color: #bcded0;
+    font-size: 1rem;
+}
+.policy-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    color: #333;
+    line-height: 1.9;
+    font-size: 15px;
+}
+.policy-body h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #123d35;
+    margin: 40px 0 12px;
+    border-left: 4px solid #C9A227;
+    padding-left: 12px;
+}
+.policy-body h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a5c50;
+    margin: 24px 0 8px;
+}
+.policy-body p { margin-bottom: 14px; }
+.policy-body ul {
+    padding-left: 22px;
+    margin-bottom: 14px;
+}
+.policy-body ul li { margin-bottom: 6px; }
+.policy-contact-box {
+    background: #f0f9f6;
+    border: 1px solid #bcded0;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-top: 40px;
+}
+.policy-contact-box p { margin: 6px 0; }
+</style>
+
+<div class="policy-hero">
+    <h1>Privacy Policy</h1>
+    <p>Glimlach | Effective Date: 01/08/2024</p>
 </div>
 
-<section class="policy-section" style="padding: 80px 0; line-height: 1.9; color: #444;">
-    <div class="container" style="max-width: 100%; margin: 0 auto;">
-        <div class="policy-content" style="background: #fff; padding: 45px; border-radius: 15px; box-shadow: var(--shadow-md);">
+<div class="policy-body">
 
-            <!-- Personal Information -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px;">
-                Personal Information
-            </h2>
+    <p>This Privacy Policy explains how Glimlach ("the Site", "we", "us", or "our") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from <strong>glimlach.in</strong>, or when you otherwise interact with us (collectively, the "Services").</p>
+    <p>In this Privacy Policy, "you" refers to any customer, website visitor, or individual interacting with our Services. By using our Site or Services, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree, please discontinue use of the Site.</p>
 
-            <p>
-                Glimlach Wellness Private Limited is a company incorporated and registered under the provisions of the Companies Act, 2015 and has its registered office at 
-                <strong>SCO No - 27, Second Floor, Phase - 3, Model Town, Bathinda - 151001</strong>, India.
-                Glimlach Wellness Private Limited is the owner of the brand Glimlach and the website 
-                <strong>https://glimlach.in/</strong>.
-            </p>
+    <h2>Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or operational needs. Revised versions will be posted on the Site with an updated "Last Updated" date.</p>
 
-            <p>
-                This Privacy Policy outlines Glimlach Wellness Private Limited’s approach to data protection and privacy to fulfill its obligation under the applicable laws and regulations.
-            </p>
+    <h2>Information We Collect and How We Use It</h2>
+    <p>To provide you with high-quality products—such as Personal Care & Hygiene, Skin Care, and Wellness & Supplements—and to operate our Services effectively, we collect information about you from the following sources:</p>
 
-            <p>
-                Throughout this document, “we”, “us”, “our”, “ours” refers to Glimlach Wellness Private Limited.
-                Wherever we have said “you” or “your”, this means YOU.
-            </p>
+    <h3>1. Information You Provide to Us Directly</h3>
+    <p>This may include:</p>
+    <ul>
+        <li><strong>Contact Details:</strong> Name, address, email address, phone number</li>
+        <li><strong>Order Details:</strong> Billing and shipping addresses, payment confirmations, products purchased</li>
+        <li><strong>Account Information:</strong> Username, password, security/verification details</li>
+        <li><strong>Customer Support Information:</strong> Any information you provide when contacting us</li>
+    </ul>
+    <p><em>Note: If you choose not to provide required information, you may be unable to use certain features of the Site.</em></p>
 
-            <p>
-                We are committed to treating data privacy seriously. This Privacy Policy provides the necessary details about how your data is collected and used by us on the Website.
-                By accessing the services provided by us on the Website, you agree to the collection and use of your data in the manner provided for under this Privacy Policy.
-            </p>
+    <h3>2. Information Automatically Collected (Usage Data)</h3>
+    <p>When you access or browse our Site, we may collect:</p>
+    <ul>
+        <li>IP address</li>
+        <li>Browser details</li>
+        <li>Device information</li>
+        <li>Pages visited</li>
+        <li>Interaction data</li>
+        <li>Cookies, tracking pixels, and similar technologies</li>
+    </ul>
+    <p>We use this data to improve website performance, enhance user experience, and maintain service security.</p>
 
-            <!-- Personal information gathered -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Personal Information Gathered by Us
-            </h2>
+    <h3>3. Information Obtained from Third Parties</h3>
+    <p>We may receive information from service providers (website hosting, shipping, customer support, analytics, and marketing partners), payment processors, and tracking & analytics tools. All third-party information is handled as per this Privacy Policy.</p>
 
-            <p>
-                As part of your registration process on our Website, we may collect personally identifiable information including but not limited to:
-            </p>
+    <h2>How We Use Your Personal Information</h2>
+    <h3>1. Providing Products and Services</h3>
+    <ul>
+        <li>Process and fulfill orders</li>
+        <li>Facilitate shipping and delivery</li>
+        <li>Manage your account</li>
+        <li>Send order updates</li>
+        <li>Assist with returns or replacements</li>
+        <li>Improve website functionality</li>
+    </ul>
+    <h3>2. Marketing & Advertising</h3>
+    <p>We may use your information to send promotional emails or display relevant ads, to help you discover new products and offers.</p>
+    <h3>3. Security & Fraud Prevention</h3>
+    <p>We may use your data to detect fraudulent activity, secure user accounts, and protect the integrity of our Services.</p>
+    <h3>4. Customer Support & Service Improvement</h3>
+    <p>We use the information to respond to your inquiries and enhance our service quality.</p>
 
-            <ul>
-                <li>Name (first and last)</li>
-                <li>Email address</li>
-                <li>Mobile phone number</li>
-                <li>Contact details</li>
-                <li>Username and password</li>
-                <li>Date of birth, age and gender</li>
-                <li>Residential and shipping address with postal code</li>
-                <li>Pages visited, links clicked and browsing behaviour</li>
-            </ul>
+    <h2>How We Disclose Your Information</h2>
+    <p>We may share your personal information under certain circumstances:</p>
+    <ul>
+        <li><strong>Service Providers:</strong> Website management, payment processing, shipping & logistics, customer support, data analytics, marketing</li>
+        <li><strong>Business & Marketing Partners:</strong> To provide additional services or display relevant advertisements</li>
+        <li><strong>Your Consent:</strong> When you voluntarily opt to share certain information</li>
+        <li><strong>Legal Obligations:</strong> To comply with applicable laws, respond to legal requests, or protect our rights</li>
+        <li><strong>Corporate Transactions:</strong> In case of a merger, acquisition, or restructuring</li>
+    </ul>
 
-            <p>
-                We may also receive certain information from other sources such as updated delivery status and address details provided by our carriers to ensure smooth future deliveries.
-            </p>
+    <h2>Your Rights & Choices</h2>
+    <p>Depending on applicable laws, you may have rights including:</p>
+    <ul>
+        <li>Access to your information</li>
+        <li>Correction of inaccurate data</li>
+        <li>Request for deletion</li>
+        <li>Opt-out of marketing communications</li>
+    </ul>
 
-            <p>
-                You may choose not to share personal information; however, this may limit your access to certain services on the Website.
-            </p>
+    <h2>Third-Party Websites & Links</h2>
+    <p>Our Site may contain links to external websites. We are not responsible for the privacy practices or content of such third-party sites.</p>
 
-            <!-- Why we collect -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Why Do We Collect Your Personal Information
-            </h2>
-
-            <p>
-                We collect your personal information through voluntary registration, surveys or interactions on our Website for purposes including:
-            </p>
-
-            <ul>
-                <li>Registering and managing your account</li>
-                <li>Verifying your identity</li>
-                <li>Processing transactions and payments</li>
-                <li>Communicating order updates</li>
-                <li>Sharing promotional offers</li>
-                <li>Improving our products and services</li>
-            </ul>
-
-            <p>
-                We also use your information to personalize your shopping experience, recommend products, analyze Website performance and fix technical issues.
-            </p>
-
-            <!-- Manner of collection -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Manner of Collection of Information
-            </h2>
-
-            <p>
-                We receive and store information when you interact with our Website or through cookies, permissions or trackers.
-                Our Website may contain links to third-party websites, and we are not responsible for their privacy practices.
-            </p>
-
-            <p>
-                Some browsers offer “Do Not Track” features; however, our Website is currently not configured to respond to such signals.
-            </p>
-
-            <!-- Consent -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Consent
-            </h2>
-
-            <p>
-                By using our Website, you consent to the collection, use and disclosure of your personal information in accordance with this Privacy Policy,
-                Terms of Use, Shipping Policy and Cancellation Policy.
-            </p>
-
-            <!-- Disclosure -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Disclosure of Personal Information
-            </h2>
-
-            <p>
-                We do not sell or share your personal information for commercial gain. Information may be shared with:
-            </p>
-
-            <ul>
-                <li>Business partners for order delivery</li>
-                <li>Payment gateway providers</li>
-                <li>Legal or regulatory authorities when required</li>
-                <li>Law enforcement agencies for fraud prevention</li>
-            </ul>
-
-            <!-- Security -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Security of Your Personal Information
-            </h2>
-
-            <p>
-                We implement physical, technical and managerial safeguards to protect your data.
-                Data is stored securely and accessed only by authorized personnel on a need-to-know basis.
-            </p>
-
-            <p>
-                Customer data is stored on the servers of BigCommerce Pty. Ltd in compliance with the Information Technology Act, 2000 and applicable rules.
-            </p>
-
-            <!-- Children -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Children’s Privacy
-            </h2>
-
-            <p>
-                Minors below 18 years may browse the Website but cannot make purchases or register without adult supervision.
-            </p>
-
-            <!-- Correction -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Correction of Personal Information
-            </h2>
-
-            <p>
-                You can update your information online through your account.
-                In case of loss of access, email us at <strong>support@glimlach.in</strong>.
-            </p>
-
-            <!-- Contact -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Contact Us
-            </h2>
-
-            <p>
-                📧 Email: support@glimlach.in <br>
-                📞 Phone: +91 89584-89684 <br>
-                🕒 Monday to Sunday (10 AM – 7 PM)
-            </p>
-
-            <!-- Grievance -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Grievance Officer
-            </h2>
-
-            <p>
-                <strong>Grievance Officer – Customer Sales</strong><br>
-                Name: Glimlach<br>
-                Email: support@glimlach.in<br>
-                Address: SCO No - 27, Second Floor, Phase - 3, Model Town, Bathinda - 151001
-            </p>
-
-            <p>
-                We aim to resolve grievances within 30 days of receipt.
-            </p>
-
-            <!-- Policy updates -->
-            <h2 style="color: var(--green); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top:40px;">
-                Changes to Privacy Policy
-            </h2>
-
-            <p>
-                We reserve the right to modify this Privacy Policy at any time.
-                Changes will be effective immediately upon posting on the Website.
-            </p>
-
-        </div>
+    <div class="policy-contact-box">
+        <h3 style="margin-top:0;">Contact Us</h3>
+        <p>For any questions, concerns, or requests regarding this Privacy Policy, please contact us:</p>
+        <p>📧 <strong>support@glimlach.in</strong></p>
+        <p>📞 <strong>8882728239</strong></p>
+        <p>📍 <strong>Delhi, Delhi, 110044, India</strong></p>
     </div>
-</section>
+
+</div>
 
 <?php include 'includes/footer.php'; ?>
-<style>
-    /* ===== PRIVACY POLICY FIX ===== */
-
-.page-header {
-    margin-bottom: 0 !important;
-}
-
-.policy-section {
-    padding: 50px 15px 80px !important; /* top gap kam */
-    background: #f7f8fa;
-}
-
-.policy-section .container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.policy-content {
-    margin-top: -30px; /* header ke paas laaye */
-    background: #ffffff;
-    padding: 40px 45px;
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-/* Headings spacing fix */
-.policy-content h2 {
-    margin-top: 35px;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-/* Paragraph readability */
-.policy-content p {
-    font-size: 16px;
-    line-height: 1.9;
-    margin-bottom: 15px;
-    color: #444;
-}
-
-/* List spacing */
-.policy-content ul {
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.policy-content ul li {
-    margin-bottom: 8px;
-    font-size: 15.5px;
-}
-
-/* Mobile fix */
-@media (max-width: 768px) {
-    .policy-content {
-        padding: 25px;
-        margin-top: -15px;
-    }
-
-    .policy-content h2 {
-        font-size: 20px;
-    }
-}
-
-</style>

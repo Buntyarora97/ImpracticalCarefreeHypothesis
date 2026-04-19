@@ -1,269 +1,50 @@
 <?php
 include 'includes/config.php';
-$page_title = "Terms and Conditions - GLIMLACH";
+$page_title = "Terms & Conditions - GLIMLACH";
 include 'includes/header.php';
 ?>
-
-<div class="page-header" style="background: linear-gradient(135deg,#0f1d17,#152e24); padding:120px 0 60px; text-align:center;">
-<div class="container">
-
-<h1 style="font-family:'Playfair Display',serif;font-size:3rem;color:#fff;margin-bottom:10px;">
-Terms and Conditions
-</h1>
-
-<p style="color:#d4af37;font-size:1.1rem;">
-Glimlach – Terms of Use & Website Policies
-</p>
-
+<style>
+.policy-hero { background: linear-gradient(135deg, #123d35 0%, #1a5c50 100%); padding: 80px 0 50px; text-align: center; }
+.policy-hero h1 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.policy-hero p { color: #bcded0; font-size: 1rem; }
+.policy-body { max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; color: #333; line-height: 1.9; font-size: 15px; }
+.policy-body h2 { font-size: 1.4rem; font-weight: 700; color: #123d35; margin: 40px 0 12px; border-left: 4px solid #C9A227; padding-left: 12px; }
+.policy-body h3 { font-size: 1.1rem; font-weight: 700; color: #1a5c50; margin: 24px 0 8px; }
+.policy-body p { margin-bottom: 14px; }
+.policy-body ul { padding-left: 22px; margin-bottom: 14px; }
+.policy-body ul li { margin-bottom: 6px; }
+.policy-contact-box { background: #f0f9f6; border: 1px solid #bcded0; border-radius: 12px; padding: 24px 28px; margin-top: 40px; }
+.policy-contact-box p { margin: 6px 0; }
+</style>
+<div class="policy-hero">
+    <h1>Terms &amp; Conditions</h1>
+    <p>Glimlach | Store Policies</p>
 </div>
+<div class="policy-body">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing and using glimlach.in, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with any part of these terms, please refrain from using the website.</p>
+    <h2>2. Use of Website</h2>
+    <h3>2.1 Eligibility</h3>
+    <p>You must be at least 18 years old to use this website. If you are under 18, you may use the website only under the supervision and consent of a parent or legal guardian.</p>
+    <h3>2.2 Account Responsibility</h3>
+    <p>If you create an account on glimlach.in, you are responsible for maintaining the confidentiality of your login credentials and for all activities conducted through your account.</p>
+    <h2>3. Product Information</h2>
+    <h3>3.1 Accuracy</h3>
+    <p>We strive to provide accurate, complete, and up-to-date product information on our website, particularly for categories such as Personal Care &amp; Hygiene, Skin Care, and Wellness &amp; Supplements. However, we do not guarantee that descriptions, images, specifications, or other content will be error-free.</p>
+    <h3>3.2 Availability</h3>
+    <p>All products listed on glimlach.in are subject to availability. We reserve the right to modify or discontinue any product, limit quantities, or update product details at any time without prior notice.</p>
+    <h2>4. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, Glimlach shall not be held liable for any indirect, incidental, special, or consequential damages arising out of your use of the website or from products purchased through us, including but not limited to personal misuse of wellness products or skin care items.</p>
+    <h2>5. Governing Law</h2>
+    <p>These Terms and Conditions are governed by the laws of India. Any disputes arising from the use of this website will fall under the exclusive jurisdiction of the competent courts located in Delhi.</p>
+    <h2>6. Changes to Terms</h2>
+    <p>We may revise or update these Terms and Conditions periodically. Continued use of glimlach.in following any changes constitutes your acceptance of the revised terms.</p>
+    <div class="policy-contact-box">
+        <h3 style="margin-top:0;">7. Contact Us</h3>
+        <p>For any questions or concerns related to these Terms and Conditions, please contact our customer support team:</p>
+        <p>📧 <strong>support@glimlach.in</strong></p>
+        <p>📞 <strong>8882728239</strong></p>
+        <p>📍 <strong>Delhi, Delhi, 110044, India</strong></p>
+    </div>
 </div>
-
-
-<section style="padding:90px 15px;background:#f7f8f6;line-height:1.9;">
-<div class="container" style="max-width:1100px;margin:auto;">
-
-<div style="background:#fff;padding:55px;border-radius:22px;box-shadow:0 30px 80px rgba(0,0,0,0.08);">
-
-
-<!-- INTRO -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;">
-Terms of Use
-</h2>
-
-<p>
-Welcome to <strong>www.glimlach.in</strong>. This website is owned and operated by 
-<strong>GLIMLACH WELLNESS PRIVATE LIMITED</strong>, the official owner of the brand 
-<strong>GLIMLACH</strong>.
-</p>
-
-<p>
-The company is incorporated under the <strong>Companies Act, 2013</strong> with its registered office at:
-</p>
-
-<p>
-<strong>
-SCO 27, 2nd Floor,<br>
-Phase 3, Model Town,<br>
-Bathinda – 151001, Punjab, India
-</strong>
-</p>
-
-<p>
-By accessing or using this website, you agree to comply with and be bound by these Terms and Conditions, 
-along with our Privacy Policy, Shipping Policy, and Refund & Cancellation Policy.
-</p>
-
-
-
-<!-- ELIGIBILITY -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Eligibility
-</h2>
-
-<p>
-Users must be competent to contract under the Indian Contract Act, 1872. Individuals under the age of 18 
-may use the website only under the supervision of a parent or legal guardian.
-</p>
-
-
-
-<!-- ACCOUNT -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-User Account & Registration
-</h2>
-
-<p>
-Customers may place orders as registered users or guest users. Registered users are responsible for 
-maintaining the confidentiality of their login credentials and for all activities that occur under their account.
-</p>
-
-<p>
-Glimlach reserves the right to suspend or terminate accounts suspected of fraudulent or abusive activity.
-</p>
-
-
-
-<!-- COUPONS -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Coupon Code Terms
-</h2>
-
-<ul>
-<li>Coupons may offer discounts up to 15% depending on the promotion.</li>
-<li>Coupons are valid only on selected Glimlach products.</li>
-<li>Coupons cannot be combined with other promotions or offers.</li>
-<li>Only one coupon can be used per order.</li>
-<li>Coupons are not valid during flash sales or special campaigns unless specified.</li>
-<li>Glimlach reserves the right to modify or cancel coupon promotions at any time.</li>
-</ul>
-
-
-
-<!-- LOYALTY -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Glimlach Coins (Loyalty Program)
-</h2>
-
-<ul>
-<li>Customers may receive reward coins on eligible purchases.</li>
-<li>Coins can be redeemed for discounts on future purchases.</li>
-<li>Coins cannot be transferred, exchanged for cash, or combined with certain offers.</li>
-<li>Coins may expire after a specified validity period.</li>
-</ul>
-
-
-
-<!-- PRODUCTS -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Product Information
-</h2>
-
-<p>
-Glimlach strives to provide accurate product descriptions, images, and pricing. However, errors may occur. 
-Glimlach reserves the right to correct errors, update information, or cancel orders if any information is inaccurate.
-</p>
-
-
-
-<!-- AYURVEDIC DISCLAIMER -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Wellness & Health Disclaimer
-</h2>
-
-<p>
-Glimlach products are based on traditional Wellness formulations and natural ingredients.
-Results may vary from person to person depending on individual health conditions, body type, and lifestyle.
-</p>
-
-<p>
-The information provided on this website is for educational purposes only and should not be considered 
-medical advice. Customers should consult a qualified healthcare professional before using any health 
-or wellness products.
-</p>
-
-
-
-<!-- PAYMENT -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Payments
-</h2>
-
-<p>
-Payments may be made through secure payment gateways including credit cards, debit cards, UPI, 
-net banking, and other payment methods available at checkout.
-</p>
-
-<p>
-Glimlach uses trusted third-party payment processors and does not store sensitive financial information.
-</p>
-
-
-
-<!-- SHIPPING -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Shipping & Delivery
-</h2>
-
-<p>
-Orders are generally processed within 24–48 hours and delivered depending on location and courier 
-partner availability.
-</p>
-
-<p>
-Detailed shipping terms are available in our <strong>Shipping & Delivery Policy</strong>.
-</p>
-
-
-
-<!-- LIABILITY -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Limitation of Liability
-</h2>
-
-<p>
-Glimlach shall not be liable for any indirect, incidental, or consequential damages arising from the 
-use of products purchased through the website.
-</p>
-
-<p>
-The maximum liability shall not exceed the purchase value of the product.
-</p>
-
-
-
-<!-- INTELLECTUAL PROPERTY -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Intellectual Property
-</h2>
-
-<p>
-All content on this website including text, images, logos, graphics, and product designs 
-are the intellectual property of Glimlach and GLIMLACH WELLNESS PRIVATE LIMITED.
-Unauthorized use or reproduction is strictly prohibited.
-</p>
-
-
-
-<!-- GOVERNING LAW -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Governing Law & Jurisdiction
-</h2>
-
-<p>
-These Terms and Conditions shall be governed by the laws of India.
-Any disputes arising out of these terms shall fall under the jurisdiction of courts located in 
-<strong>Bathinda, Punjab</strong>.
-</p>
-
-
-
-<!-- CONTACT -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Contact Information
-</h2>
-
-<p>
-<strong>Email:</strong> support@glimlach.in<br>
-<strong>Phone:</strong> +91 8958489684
-</p>
-
-
-
-<!-- GRIEVANCE -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:45px;">
-Grievance Officer
-</h2>
-
-<p>
-<strong>Name:</strong> Manpreet Singh<br>
-<strong>Email:</strong> support@glimlach.in
-</p>
-
-<p>
-<strong>Address:</strong><br>
-SCO 27, Second Floor,<br>
-Phase-3, Model Town,<br>
-Bathinda – 151001, Punjab, India
-</p>
-
-
-</div>
-</div>
-</section>
-
-
 <?php include 'includes/footer.php'; ?>

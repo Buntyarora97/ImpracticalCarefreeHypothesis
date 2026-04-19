@@ -1,209 +1,65 @@
 <?php
 include 'includes/config.php';
-$page_title = "Shipping & Delivery Policy - GLIMLACH";
+$page_title = "Shipping Policy - GLIMLACH";
 include 'includes/header.php';
 ?>
-
-<div class="page-header" style="background: linear-gradient(135deg,#0f1d17,#152e24);padding:120px 0 60px;text-align:center;color:#fff;">
-    <div class="container">
-        <h1 style="font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:10px;">
-            Shipping & Delivery Policy
-        </h1>
-
-        <p style="color:#d4af37;font-size:1.1rem;">
-            GLIMLACH WELLNESS PRIVATE LIMITED
-        </p>
+<style>
+.policy-hero { background: linear-gradient(135deg, #123d35 0%, #1a5c50 100%); padding: 80px 0 50px; text-align: center; }
+.policy-hero h1 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.policy-hero p { color: #bcded0; font-size: 1rem; }
+.policy-body { max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; color: #333; line-height: 1.9; font-size: 15px; }
+.policy-body h2 { font-size: 1.4rem; font-weight: 700; color: #123d35; margin: 40px 0 12px; border-left: 4px solid #C9A227; padding-left: 12px; }
+.policy-body h3 { font-size: 1.1rem; font-weight: 700; color: #1a5c50; margin: 24px 0 8px; }
+.policy-body p { margin-bottom: 14px; }
+.policy-body ul { padding-left: 22px; margin-bottom: 14px; }
+.policy-body ul li { margin-bottom: 6px; }
+.shipping-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.shipping-table th { background: #123d35; color: #fff; padding: 12px 16px; text-align: left; }
+.shipping-table td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; }
+.shipping-table tr:nth-child(even) td { background: #f9fafb; }
+.policy-contact-box { background: #f0f9f6; border: 1px solid #bcded0; border-radius: 12px; padding: 24px 28px; margin-top: 40px; }
+.policy-contact-box p { margin: 6px 0; }
+</style>
+<div class="policy-hero">
+    <h1>Shipping Policy</h1>
+    <p>Glimlach | Effective Date: 01/08/2024</p>
+</div>
+<div class="policy-body">
+    <h2>1. Shipping Information</h2>
+    <h3>1.1 Processing Time</h3>
+    <p>All orders placed on glimlach.in are processed within <strong>3–5 business days</strong>. You will receive an email notification once your order has been dispatched.</p>
+    <h3>1.2 Shipping Methods</h3>
+    <p>We offer reliable shipping options for all product categories including Personal Care &amp; Hygiene, Skin Care, and Wellness &amp; Supplements. Shipping times and charges may vary based on your location and the shipping method selected at checkout.</p>
+    <h2>2. Shipping Costs</h2>
+    <h3>2.1 Domestic Shipping</h3>
+    <table class="shipping-table">
+        <thead><tr><th>Order Value</th><th>Shipping Charge</th></tr></thead>
+        <tbody>
+            <tr><td>Below ₹300</td><td>₹80 shipping charge</td></tr>
+            <tr><td>₹300 and above</td><td>FREE standard shipping</td></tr>
+            <tr><td>Cash on Delivery (COD)</td><td>₹50 COD fee applicable</td></tr>
+        </tbody>
+    </table>
+    <h3>2.2 International Shipping</h3>
+    <p>International shipping is currently <strong>not available</strong> on glimlach.in.</p>
+    <h2>3. Delivery Times</h2>
+    <h3>3.1 Domestic Delivery</h3>
+    <p>Delivery timelines vary based on the chosen shipping method and your location. Estimated delivery times will be displayed at checkout.</p>
+    <h3>3.2 International Delivery</h3>
+    <p>International delivery is currently not available on glimlach.in.</p>
+    <h2>4. Order Tracking</h2>
+    <p>Once your order has been shipped, you will receive an email with a <strong>tracking number</strong>. This can be used to track your package through the shipping carrier's online portal.</p>
+    <h2>5. Shipping Issues</h2>
+    <h3>5.1 Lost or Stolen Packages</h3>
+    <p>Glimlach is not responsible for lost or stolen packages after they have been marked as delivered by the courier. For assistance, please contact the carrier directly.</p>
+    <h3>5.2 Incorrect Address</h3>
+    <p>Please double-check your shipping address before placing an order. We are not responsible for delays or extra charges caused by inaccurate or incomplete addresses.</p>
+    <div class="policy-contact-box">
+        <h3 style="margin-top:0;">Contact Us</h3>
+        <p>For any shipping-related questions or support, feel free to contact us:</p>
+        <p>📧 <strong>support@glimlach.in</strong></p>
+        <p>📞 <strong>8882728239</strong></p>
+        <p>📍 <strong>Delhi, Delhi, 110044, India</strong></p>
     </div>
 </div>
-
-
-<section style="padding:90px 15px;background:#f7f8f6;line-height:1.9;">
-<div class="container" style="max-width:1100px;margin:auto;">
-
-<div style="background:#fff;padding:55px;border-radius:22px;box-shadow:0 25px 70px rgba(0,0,0,0.08);">
-
-<!-- INTRO -->
-
-<p style="text-align:justify;font-size:16px;color:#333;">
-Glimlach (operated by <strong>GLIMLACH WELLNESS PRIVATE LIMITED</strong>) partners with reputed logistics and courier service providers to ensure safe and timely delivery of all products.  
-
-We take utmost care in packaging and quality control to ensure that the products reach our customers in the best condition without damage. All packaging materials are sourced from reliable vendors and tested to maintain product safety during transit.
-</p>
-
-
-<div style="background:#fafafa;padding:22px;border-left:5px solid #d4af37;margin:30px 0;border-radius:8px;">
-<p style="margin:0;font-size:15px;">
-<strong>Shipping Charges:</strong> ₹190 will be charged for all orders above <strong>₹3500</strong>.  
-Orders below ₹3500 may qualify for free or discounted shipping depending on promotions.
-</p>
-</div>
-
-
-<!-- PROCESS -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Order Processing & Dispatch
-</h2>
-
-<p>
-Once your order is successfully placed on <strong>www.glimlach.in</strong>, our system processes the order and prepares it for dispatch.  
-
-Each product undergoes quality inspection before being packed and handed over to our logistics partner.
-</p>
-
-<p>
-After dispatch, the courier partner delivers the order to the shipping address provided during checkout.
-</p>
-
-<p>
-In case the courier partner cannot reach you at the address or suitable time, they may contact you directly for delivery coordination.
-</p>
-
-
-<!-- PACKAGING -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Packaging Safety
-</h2>
-
-<p>
-All Glimlach products are securely packaged to prevent damage during transportation.
-</p>
-
-<p>
-Fragile products such as glass bottles are wrapped with multiple protective layers including bubble wrap and placed inside sturdy corrugated boxes before shipping.
-</p>
-
-<p>
-Glimlach holds responsibility for damages caused during transit and customers are advised to report such cases immediately after delivery.
-</p>
-
-
-<!-- LOCATIONS -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Delivery Locations
-</h2>
-
-<p>
-Glimlach currently ships products across most locations within India. Serviceability depends on courier partner coverage and may vary depending on the delivery pin-code.
-</p>
-
-<p>
-Customers can verify serviceable locations during checkout by entering their pin-code.
-</p>
-
-
-<!-- TRACKING -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Order Tracking
-</h2>
-
-<p>
-Once your order is dispatched, you will receive an email or SMS containing tracking details and courier partner information.
-</p>
-
-<p>
-Registered users can also track orders by logging into their account and visiting:
-</p>
-
-<p><strong>My Account → Orders</strong></p>
-
-
-<!-- DELIVERY TIME -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Estimated Delivery Time
-</h2>
-
-<p>
-Orders are generally processed and dispatched within <strong>24–48 hours</strong> of successful payment confirmation.
-</p>
-
-<p>
-Estimated delivery time ranges between <strong>2 to 7 business days</strong> depending on the shipping location and courier service availability.
-</p>
-
-<p>
-Delivery timelines may vary due to unforeseen circumstances such as weather conditions, courier delays, or operational issues.
-</p>
-
-
-<div style="background:#fff7e6;padding:20px;border-left:5px solid #e6b800;border-radius:6px;margin:30px 0;">
-<p style="margin:0;">
-<strong>Important:</strong> Delivery timelines mentioned are estimates only. Glimlach shall not be liable for delays caused by courier partners or circumstances beyond our control.
-</p>
-</div>
-
-
-<!-- DELIVERY ATTEMPTS -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Delivery Attempts
-</h2>
-
-<p>
-Courier partners generally attempt delivery up to <strong>three (3)</strong> times. If delivery is unsuccessful after these attempts, the shipment may be returned to our warehouse.
-</p>
-
-<p>
-Customers may contact support to arrange re-delivery if required.
-</p>
-
-
-<!-- SHIPPING CHARGES -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Shipping Charges Policy
-</h2>
-
-<p>
-Shipping charges are calculated based on order value, delivery location, and packaging requirements.
-</p>
-
-<p>
-All applicable shipping charges are displayed clearly during checkout before payment confirmation.
-</p>
-
-<p>
-Glimlach does not charge any hidden shipping fees beyond the amount displayed on the invoice.
-</p>
-
-
-<!-- POLICY UPDATES -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Policy Updates
-</h2>
-
-<p>
-Glimlach reserves the right to update or modify this Shipping & Delivery Policy at any time without prior notice.
-</p>
-
-<p>
-Changes will be effective immediately once published on the website.
-</p>
-
-
-<!-- CONTACT -->
-
-<h2 style="font-family:'Playfair Display',serif;color:#1b5e3c;border-bottom:2px solid #d4af37;padding-bottom:12px;margin-top:40px;">
-Contact Information
-</h2>
-
-<p>
-For any delivery related queries or issues, please contact our support team:
-</p>
-
-<p>
-<strong>Email:</strong> support@glimlach.in <br>
-<strong>Company:</strong> GLIMLACH WELLNESS PRIVATE LIMITED <br>
-<strong>Address:</strong> SCO 27, 2nd Floor, Phase 3, Model Town, Bathinda, Punjab – 151001, India
-</p>
-
-</div>
-</div>
-</section>
-
 <?php include 'includes/footer.php'; ?>

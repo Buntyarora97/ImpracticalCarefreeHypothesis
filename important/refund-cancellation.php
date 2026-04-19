@@ -3,227 +3,66 @@ include 'includes/config.php';
 $page_title = "Refund & Cancellation Policy - GLIMLACH";
 include 'includes/header.php';
 ?>
-
 <style>
-
-body{
-background:#f5f5f5;
-}
-
-.policy-container{
-max-width:1000px;
-margin:60px auto;
-background:#fff;
-padding:50px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-line-height:1.8;
-}
-
-h1{
-text-align:center;
-margin-bottom:30px;
-font-size:34px;
-}
-
-h2{
-margin-top:35px;
-font-size:22px;
-color:#1b5e3c;
-}
-
-ul{
-padding-left:20px;
-}
-
-li{
-margin-bottom:8px;
-}
-
-.note-box{
-background:#faf8f0;
-padding:20px;
-border-left:5px solid #d4af37;
-margin-top:25px;
-border-radius:6px;
-}
-
-.contact-box{
-background:#fafafa;
-padding:20px;
-border-left:5px solid #1b5e3c;
-margin-top:25px;
-border-radius:6px;
-}
-
-@media(max-width:768px){
-
-.policy-container{
-padding:25px;
-margin:20px;
-}
-
-}
-
+.policy-hero { background: linear-gradient(135deg, #123d35 0%, #1a5c50 100%); padding: 80px 0 50px; text-align: center; }
+.policy-hero h1 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.policy-hero p { color: #bcded0; font-size: 1rem; }
+.policy-body { max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; color: #333; line-height: 1.9; font-size: 15px; }
+.policy-body h2 { font-size: 1.4rem; font-weight: 700; color: #123d35; margin: 40px 0 12px; border-left: 4px solid #C9A227; padding-left: 12px; }
+.policy-body h3 { font-size: 1.1rem; font-weight: 700; color: #1a5c50; margin: 24px 0 8px; }
+.policy-body p { margin-bottom: 14px; }
+.policy-body ul { padding-left: 22px; margin-bottom: 14px; }
+.policy-body ul li { margin-bottom: 6px; }
+.policy-contact-box { background: #f0f9f6; border: 1px solid #bcded0; border-radius: 12px; padding: 24px 28px; margin-top: 40px; }
+.policy-contact-box p { margin: 6px 0; }
+.highlight-box { background: #fffbeb; border-left: 4px solid #C9A227; padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
 </style>
-
-<div class="policy-container">
-
-<h1>Refund & Cancellation Policy</h1>
-
-<p>
-At <strong>GLIMLACH</strong>, operated by 
-<strong>GLIMLACH WELLNESS PRIVATE LIMITED</strong>, 
-we are committed to delivering high-quality Wellness and wellness products. 
-Customer satisfaction is extremely important to us. This Refund and Cancellation 
-Policy explains the terms under which cancellations, returns, replacements, 
-and refunds are processed for purchases made through our website 
-<strong>www.glimlach.in</strong>.
-</p>
-
-<div class="note-box">
-<strong>Important:</strong> As our products are health, wellness, and Wellness formulations, 
-certain hygiene and safety conditions apply to returns and refunds.
+<div class="policy-hero">
+    <h1>Refund &amp; Cancellation Policy</h1>
+    <p>Glimlach | Effective Date: 01/08/2024</p>
 </div>
-
-
-<h2>1. Order Cancellation</h2>
-
-<p>
-Customers may cancel their order within <strong>8 hours</strong> of placing the order 
-or before the order has been shipped from our warehouse, whichever occurs earlier.
-</p>
-
-<ul>
-<li>If the order has already been shipped, cancellation requests cannot be accepted.</li>
-<li>Refund for cancelled orders will be processed to the original payment method.</li>
-<li>For cancellation requests, customers must contact support with their order details.</li>
-</ul>
-
-
-<h2>2. Return & Refund Eligibility</h2>
-
-<p>Refund or replacement may be approved in the following cases:</p>
-
-<ul>
-<li>The product delivered is damaged during transit.</li>
-<li>An incorrect product has been delivered.</li>
-<li>The product is defective or leaking.</li>
-<li>The order was cancelled before shipment.</li>
-<li>The shipment was lost during transit by the courier partner.</li>
-</ul>
-
-<p>
-Customers must notify our support team within 
-<strong>12 hours of delivery</strong> and provide 
-clear photos or videos showing the issue.
-</p>
-
-
-<h2>3. Non-Refundable Situations</h2>
-
-<p>Refund or return requests will not be accepted under the following conditions:</p>
-
-<ul>
-<li>The product has been opened, used, or tampered with.</li>
-<li>Refund request made after 48 hours of delivery.</li>
-<li>Damage caused due to improper storage or handling by the customer.</li>
-<li>Minor packaging damage that does not affect product quality.</li>
-<li>Products purchased under promotional offers, clearance sales, or special discounts.</li>
-<li>Dissatisfaction due to personal taste or expected results.</li>
-</ul>
-
-
-<h2>4. Wellness Product Disclaimer</h2>
-
-<p>
-GLIMLACH products are based on traditional Wellness formulations and natural ingredients.
-Results may vary from person to person depending on body type, lifestyle, and health conditions.
-</p>
-
-<p>
-Our products are not intended to diagnose, treat, cure, or prevent any disease.
-Customers are advised to consult a qualified healthcare professional before use 
-if they have medical conditions, allergies, or are pregnant.
-</p>
-
-
-<h2>5. Refund Process</h2>
-
-<p>
-Once the returned product is received and inspected by our quality team, 
-the refund will be processed within <strong>5-7 business days</strong>.
-</p>
-
-<ul>
-<li>Refunds will be credited to the original payment method.</li>
-<li>For Cash on Delivery orders, refunds may be processed via bank transfer or UPI.</li>
-<li>Processing time may vary depending on the payment provider.</li>
-</ul>
-
-
-<h2>6. Replacement Policy</h2>
-
-<p>
-In cases where the product is damaged or incorrect, we may offer a 
-<strong>replacement instead of a refund</strong>.
-</p>
-
-<p>
-Replacement requests must be raised within 
-<strong>12 hours of receiving the order</strong>.
-</p>
-
-
-<h2>7. Shipping Charges</h2>
-
-<p>
-Shipping charges are generally <strong>non-refundable</strong>, except in cases 
-where the return is due to an error from our side such as:
-</p>
-
-<ul>
-<li>Incorrect product delivered</li>
-<li>Damaged product received</li>
-</ul>
-
-
-<h2>8. Policy Updates</h2>
-
-<p>
-GLIMLACH reserves the right to update or modify this Refund & Cancellation Policy 
-at any time without prior notice. Any changes will be effective immediately upon 
-posting on our website.
-</p>
-
-
-<h2>9. Contact Us</h2>
-
-<div class="contact-box">
-
-<p><strong>Company:</strong> GLIMLACH WELLNESS PRIVATE LIMITED</p>
-
-<p><strong>Brand:</strong> GLIMLACH</p>
-
-<p><strong>Email:</strong> support@glimlach.in</p>
-
-<p><strong>Phone:</strong> +91 8958489684</p>
-
-<p>
-<strong>Registered Address:</strong><br>
-SCO 27, 2nd Floor,<br>
-Phase 3, Model Town,<br>
-Bathinda – 151001,<br>
-Punjab, India
-</p>
-
-<p>
-For any refund or return related queries, please contact our customer 
-support team and mention your order number for faster assistance.
-</p>
-
+<div class="policy-body">
+    <h2>1. Cancellation Policy</h2>
+    <h3>1.1 Order Cancellation by Customer</h3>
+    <p>You may cancel your order within <strong>24 hours</strong> of placing it, provided the order has not yet been shipped. To cancel, contact us immediately at <strong>support@glimlach.in</strong> or call <strong>8882728239</strong>.</p>
+    <h3>1.2 Order Cancellation by Glimlach</h3>
+    <p>We reserve the right to cancel orders in cases of product unavailability, payment failures, or suspected fraudulent activity. A full refund will be issued in such cases.</p>
+    <h2>2. Return Policy</h2>
+    <h3>2.1 Eligible Returns</h3>
+    <p>We accept returns under the following conditions:</p>
+    <ul>
+        <li>The product received is damaged, defective, or incorrect</li>
+        <li>Return is requested within <strong>7 days</strong> of delivery</li>
+        <li>Product is unused, unopened, and in its original packaging</li>
+    </ul>
+    <h3>2.2 Non-Returnable Items</h3>
+    <ul>
+        <li>Opened or used products</li>
+        <li>Products without original packaging</li>
+        <li>Items purchased on sale or with special discounts</li>
+        <li>Personal care and hygiene products once opened</li>
+    </ul>
+    <div class="highlight-box">
+        <strong>How to Initiate a Return:</strong> Email us at <strong>support@glimlach.in</strong> with your order number, reason for return, and photos of the product. Our team will respond within 2 business days.
+    </div>
+    <h2>3. Refund Policy</h2>
+    <h3>3.1 Refund Process</h3>
+    <p>Once your return is approved and the product is received and inspected, we will initiate a refund within <strong>5–7 business days</strong>.</p>
+    <h3>3.2 Refund Methods</h3>
+    <ul>
+        <li><strong>Online Payments (UPI, Card, Net Banking):</strong> Refunded to the original payment source</li>
+        <li><strong>Cash on Delivery (COD):</strong> Refunded via bank transfer or UPI to your registered account</li>
+    </ul>
+    <h3>3.3 Shipping Charges</h3>
+    <p>Original shipping charges are non-refundable unless the return is due to our error (damaged/wrong product).</p>
+    <h2>4. Exchange Policy</h2>
+    <p>We currently do not offer direct product exchanges. If you wish to exchange a product, please return the original item (if eligible) and place a new order.</p>
+    <div class="policy-contact-box">
+        <h3 style="margin-top:0;">Contact Us</h3>
+        <p>For any refund or cancellation queries, please reach out to us:</p>
+        <p>📧 <strong>support@glimlach.in</strong></p>
+        <p>📞 <strong>8882728239</strong></p>
+        <p>📍 <strong>Delhi, Delhi, 110044, India</strong></p>
+    </div>
 </div>
-
-</div>
-
 <?php include 'includes/footer.php'; ?>

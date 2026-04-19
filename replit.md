@@ -21,9 +21,10 @@ PHP 8.2 e-commerce wellness/supplements store for the Indian market. Runs on por
 
 ## Database
 - Replit PostgreSQL is the primary database (auto-initialized on first PHP request)
-- Tables auto-created: categories, products, product_media, reviews, hero_slides, stories, settings, orders, order_items, users, admins, promo_codes, promo_code_usage, contact_inquiries, reels, video_popups
-- Seed data (10 products, 3 categories) is auto-inserted if products table is empty
+- Tables auto-created: categories, products, product_media, reviews, hero_slides, stories, settings, orders, order_items, users, admins, promo_codes, promo_code_usage, contact_inquiries, reels, video_popups, pincodes
+- Seed data (10 products, 3 categories, 5 stories with real person images) auto-inserted if empty
 - Default admin: username=`admin`, password=`admin123`
+- Contact info: phone 8882728239, email support@glimlach.in, Delhi, Delhi, 110044
 
 ## Environment Variables / Secrets
 All sensitive credentials should be stored as Replit secrets:
