@@ -34,6 +34,7 @@ All sensitive credentials should be stored as Replit secrets:
 - `PAYU_MERCHANT_KEY`, `PAYU_SALT`
 - `IM_API_KEY`, `IM_AUTH_TOKEN` — Instamojo
 - `SHIPROCKET_API_EMAIL`, `SHIPROCKET_API_PASSWORD`, `SHIPROCKET_PICKUP_LOCATION`
+- `FACEBOOK_CONVERSIONS_ACCESS_TOKEN`, `FACEBOOK_PIXEL_ID` — optional server-side purchase tracking
 - `SITE_URL` — production domain (e.g. https://glimlach.in)
 
 ## Workflow

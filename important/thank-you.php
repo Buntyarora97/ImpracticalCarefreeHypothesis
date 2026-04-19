@@ -39,40 +39,42 @@ $shippingAddress = $order['shipping_address'] ?? '';
 // SESSION CLEAR (OPTIONAL - COMMENT KAR DO AGAR REFRESH CHAHIYE)
 // unset($_SESSION['order_success']);
 
-// FACEBOOK PIXEL TRACKING - SERVER SIDE
-$access_token = "EAA8TQJDUNtwBQxNFN0lRIHFBoLDmus5P7TXSQdKhELokczwsLdSUYGL3Uv44iAMTH0pPoZBS6WpSYmUp8KYbwBTpFxzIFVUFzWCgFoR8CV04eXZCQ1R1AEZCfv4GB7PQpVcmbS7rI7StcMSPNa0vm4RkWSjFZCeSz7ZCrBkZAG9HMmPU0D3P15GIEFhXiuwHDPlgZDZD";
-$pixel_id = "YOUR_PIXEL_ID";
+$access_token = getenv('FACEBOOK_CONVERSIONS_ACCESS_TOKEN') ?: '';
+$pixel_id = getenv('FACEBOOK_PIXEL_ID') ?: '';
 
-$data = [
-  "data" => [
-    [
-      "event_name" => "Purchase",
-      "event_time" => time(),
-      "event_id" => $orderId,
-      "action_source" => "website",
-      "user_data" => [
-        "client_ip_address" => $_SERVER['REMOTE_ADDR'],
-        "client_user_agent" => $_SERVER['HTTP_USER_AGENT']
-      ],
-      "custom_data" => [
-        "currency" => "INR",
-        "value" => $totalAmount,
-        "order_id" => $orderId
+if ($access_token !== '' && $pixel_id !== '') {
+    $data = [
+      "data" => [
+        [
+          "event_name" => "Purchase",
+          "event_time" => time(),
+          "event_id" => $orderId,
+          "action_source" => "website",
+          "user_data" => [
+            "client_ip_address" => $_SERVER['REMOTE_ADDR'],
+            "client_user_agent" => $_SERVER['HTTP_USER_AGENT']
+          ],
+          "custom_data" => [
+            "currency" => "INR",
+            "value" => $totalAmount,
+            "order_id" => $orderId
+          ]
+        ]
       ]
-    ]
-  ]
-];
+    ];
 
-$url = "https://graph.facebook.com/v18.0/$pixel_id/events?access_token=$access_token";
+    $url = "https://graph.facebook.com/v18.0/" . rawurlencode($pixel_id) . "/events?access_token=" . rawurlencode($access_token);
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 
-$response = curl_exec($ch);
-curl_close($ch);
+    curl_exec($ch);
+    curl_close($ch);
+}
 
 ?>
 <!DOCTYPE html>

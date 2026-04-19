@@ -16,9 +16,14 @@ $email = $_POST['email'] ?? '';
 $firstname = $_POST['firstname'] ?? '';
 $posted_hash = $_POST['hash'] ?? '';
 $key = $_POST['key'] ?? '';
-$salt = '7d6ae3c6826df8a24ae4269ea1297dbdf370e6c6c0d24174d438876f8a7df6af';
+$salt = PAYU_SALT;
 
-// Reverse hash sequence for PayU: salt|status|udf10|udf9|udf8|udf7|udf6|udf5|udf4|udf3|udf2|udf1|email|firstname|productinfo|amount|txnid|key
+if ($salt === '') {
+    error_log('PayU success callback received but PAYU_SALT is not configured.');
+    header("Location: payu-failed.php?reason=payment_not_configured");
+    exit;
+}
+
 $hashSequence = $salt . '|' . $status . '|||||||||||' . $email . '|' . $firstname . '|' . $productinfo . '|' . $amount . '|' . $txnid . '|' . $key;
 $calculated_hash = strtolower(hash('sha512', $hashSequence));
 
@@ -35,7 +40,7 @@ if (!$order) {
 }
 
 // Check for both success and pending/other valid states if hash matches
-if ($calculated_hash === $posted_hash) {
+if (hash_equals($calculated_hash, strtolower($posted_hash))) {
     $payment_status = ($status === 'success') ? 'paid' : 'pending';
     
     Order::updatePaymentStatus($order['id'], $payment_status, [
