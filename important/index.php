@@ -3274,17 +3274,9 @@ function moveCarousel(direction) {
     const track = document.getElementById('pasTrack');
     const viewport = track.parentElement;
     const cards = track.querySelectorAll('.pas-card:not([style*="display: none"])');
-    
     if (cards.length === 0) return;
-    
-    const cardWidth = cards[0].offsetWidth + 20; // Including gap
-    const viewportWidth = viewport.clientWidth;
-    const maxScroll = Math.max(0, (cards.length * cardWidth) - viewportWidth);
-    
-    currentSlide += direction * cardWidth;
-    currentSlide = Math.max(0, Math.min(currentSlide, maxScroll));
-    
-    track.style.transform = `translateX(-${currentSlide}px)`;
+    const cardWidth = cards[0].offsetWidth + 20;
+    viewport.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
 }
 
 // Touch Handlers
@@ -3338,7 +3330,7 @@ function filterProducts(category) {
     // Reset carousel position
     currentSlide = 0;
     const track = document.getElementById('pasTrack');
-    if (track) track.style.transform = 'translateX(0)';
+    if (track) track.parentElement.scrollLeft = 0;
 }
 
 // Product Modal
@@ -3469,7 +3461,7 @@ window.addEventListener('resize', function() {
     resizeTimer = setTimeout(function() {
         currentSlide = 0;
         const track = document.getElementById('pasTrack');
-        if (track) track.style.transform = 'translateX(0)';
+        if (track) track.parentElement.scrollLeft = 0;
     }, 250);
 });
 </script>

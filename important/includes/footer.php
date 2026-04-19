@@ -274,7 +274,7 @@
     
     <!-- Copyright Bar -->
     <div class="copyright-bar py-4">
-        Glimlach is a company of Dr Tridosha Herbotech Private Limited © Copyright 2025 Glimlach
+        © Copyright 2025 Glimlach | Created by <a href="https://buntytech.online" target="_blank" style="color:#bcded0;text-decoration:none;">Buntytech.online</a>
     </div>
 </footer>
 

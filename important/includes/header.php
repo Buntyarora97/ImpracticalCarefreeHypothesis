@@ -231,7 +231,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </button>
 
                     <a href="index.php" class="flex-shrink-0 mx-auto md:mx-0">
-                        <img src="assets/images/logo/logo.png" alt="GLIMLACH" class="h-8 lg:h-12 w-auto">
+                        <img src="assets/images/logo/logo.png" alt="GLIMLACH" class="h-12 lg:h-16 w-auto">
                     </a>
 
                     <!-- Desktop Location (Hidden on mobile) -->
