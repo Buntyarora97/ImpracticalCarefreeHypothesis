@@ -3,12 +3,14 @@ require_once __DIR__ . '/../database.php';
 
 class User {
     public static function create($data) {
-        $stmt = db()->prepare("INSERT INTO users (name, email, phone, password, address, pincode, city, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = db()->prepare("INSERT INTO users (name, email, phone, password, password_hash, address, pincode, city, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $hash = password_hash($data['password'], PASSWORD_DEFAULT);
         return $stmt->execute([
             $data['name'],
             $data['email'],
             $data['phone'] ?? '',
-            password_hash($data['password'], PASSWORD_DEFAULT),
+            $hash,
+            $hash,
             $data['address'] ?? '',
             $data['pincode'] ?? '',
             $data['city'] ?? '',
@@ -20,7 +22,8 @@ class User {
         $stmt = db()->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch();
-        if ($user && password_verify($password, $user['password'])) {
+        $storedPassword = $user['password_hash'] ?? $user['password'] ?? '';
+        if ($user && password_verify($password, $storedPassword)) {
             return $user;
         }
         return false;

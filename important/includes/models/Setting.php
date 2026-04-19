@@ -14,7 +14,6 @@ class Setting {
     }
 
     public static function set($key, $value) {
-        // Fix for Postgres which doesn't support ON DUPLICATE KEY UPDATE
         $stmt = db()->prepare("SELECT id FROM settings WHERE key = ?");
         $stmt->execute([$key]);
         if ($stmt->fetch()) {

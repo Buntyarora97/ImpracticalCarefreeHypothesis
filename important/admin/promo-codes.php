@@ -17,38 +17,21 @@ function runMigration($db) {
         // Check if promo_codes table exists
         try { $db->query("SELECT id FROM promo_codes LIMIT 1"); }
         catch (Exception $e) {
-            // Detect MySQL vs PostgreSQL
-            $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
-            if ($driver === 'pgsql') {
-                $db->exec("CREATE TABLE IF NOT EXISTS promo_codes (
-                    id SERIAL PRIMARY KEY, code VARCHAR(50) NOT NULL UNIQUE,
-                    influencer_name VARCHAR(100) DEFAULT NULL, influencer_email VARCHAR(255) DEFAULT NULL,
-                    discount_type VARCHAR(20) DEFAULT 'percentage', discount_value DECIMAL(10,2) DEFAULT 0,
-                    max_discount DECIMAL(10,2) DEFAULT 0, min_order DECIMAL(10,2) DEFAULT 0,
-                    max_uses INTEGER DEFAULT 0, used_count INTEGER DEFAULT 0,
-                    commission_type VARCHAR(20) DEFAULT 'percentage', commission_value DECIMAL(10,2) DEFAULT 0,
-                    expires_at DATE DEFAULT NULL, is_active INTEGER DEFAULT 1,
-                    notes TEXT DEFAULT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)");
-            } else {
-                $db->exec("CREATE TABLE IF NOT EXISTS `promo_codes` (
-                    `id` INT AUTO_INCREMENT PRIMARY KEY, `code` VARCHAR(50) NOT NULL UNIQUE,
-                    `influencer_name` VARCHAR(100) DEFAULT NULL, `influencer_email` VARCHAR(255) DEFAULT NULL,
-                    `discount_type` VARCHAR(20) DEFAULT 'percentage', `discount_value` DECIMAL(10,2) DEFAULT 0,
-                    `max_discount` DECIMAL(10,2) DEFAULT 0, `min_order` DECIMAL(10,2) DEFAULT 0,
-                    `max_uses` INT DEFAULT 0, `used_count` INT DEFAULT 0,
-                    `commission_type` VARCHAR(20) DEFAULT 'percentage', `commission_value` DECIMAL(10,2) DEFAULT 0,
-                    `expires_at` DATE DEFAULT NULL, `is_active` INT DEFAULT 1,
-                    `notes` TEXT DEFAULT NULL, `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
-            }
+            $db->exec("CREATE TABLE IF NOT EXISTS `promo_codes` (
+                `id` INT AUTO_INCREMENT PRIMARY KEY, `code` VARCHAR(50) NOT NULL UNIQUE,
+                `influencer_name` VARCHAR(100) DEFAULT NULL, `influencer_email` VARCHAR(255) DEFAULT NULL,
+                `discount_type` VARCHAR(20) DEFAULT 'percentage', `discount_value` DECIMAL(10,2) DEFAULT 0,
+                `max_discount` DECIMAL(10,2) DEFAULT 0, `min_order` DECIMAL(10,2) DEFAULT 0,
+                `max_uses` INT DEFAULT 0, `used_count` INT DEFAULT 0,
+                `commission_type` VARCHAR(20) DEFAULT 'percentage', `commission_value` DECIMAL(10,2) DEFAULT 0,
+                `expires_at` DATE DEFAULT NULL, `is_active` INT DEFAULT 1,
+                `notes` TEXT DEFAULT NULL, `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
             $msgs[] = "promo_codes table created";
         }
 
         // Check and add missing columns in promo_codes
-        $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
-        $cols_result = ($driver === 'pgsql')
-            ? $db->query("SELECT column_name FROM information_schema.columns WHERE table_name='promo_codes'")->fetchAll(PDO::FETCH_COLUMN)
-            : $db->query("SHOW COLUMNS FROM `promo_codes`")->fetchAll(PDO::FETCH_COLUMN);
+        $cols_result = $db->query("SHOW COLUMNS FROM `promo_codes`")->fetchAll(PDO::FETCH_COLUMN);
         
         $existing_cols = array_map('strtolower', $cols_result);
         
@@ -64,7 +47,7 @@ function runMigration($db) {
         foreach ($needed as $col => $def) {
             if (!in_array($col, $existing_cols)) {
                 try {
-                    $db->exec("ALTER TABLE " . ($driver === 'pgsql' ? "promo_codes" : "`promo_codes`") . " ADD COLUMN " . ($driver === 'pgsql' ? "" : "`") . $col . ($driver === 'pgsql' ? "" : "`") . " $def");
+                    $db->exec("ALTER TABLE `promo_codes` ADD COLUMN `$col` $def");
                     $msgs[] = "Added column: $col";
                 } catch (Exception $e) {
                     // Ignore if already exists
@@ -75,23 +58,14 @@ function runMigration($db) {
         // Check if promo_code_usage table exists
         try { $db->query("SELECT id FROM promo_code_usage LIMIT 1"); }
         catch (Exception $e) {
-            if ($driver === 'pgsql') {
-                $db->exec("CREATE TABLE IF NOT EXISTS promo_code_usage (
-                    id SERIAL PRIMARY KEY, promo_code_id INTEGER NOT NULL, order_id INTEGER NOT NULL,
-                    order_number VARCHAR(50) NOT NULL, customer_name VARCHAR(255) DEFAULT NULL,
-                    customer_phone VARCHAR(20) DEFAULT NULL, order_total DECIMAL(10,2) DEFAULT 0,
-                    discount_given DECIMAL(10,2) DEFAULT 0, commission_earned DECIMAL(10,2) DEFAULT 0,
-                    used_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)");
-            } else {
-                $db->exec("CREATE TABLE IF NOT EXISTS `promo_code_usage` (
-                    `id` INT AUTO_INCREMENT PRIMARY KEY, `promo_code_id` INT NOT NULL,
-                    `order_id` INT NOT NULL, `order_number` VARCHAR(50) NOT NULL,
-                    `customer_name` VARCHAR(255) DEFAULT NULL, `customer_phone` VARCHAR(20) DEFAULT NULL,
-                    `order_total` DECIMAL(10,2) DEFAULT 0, `discount_given` DECIMAL(10,2) DEFAULT 0,
-                    `commission_earned` DECIMAL(10,2) DEFAULT 0, `used_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    INDEX `idx_promo_code_id` (`promo_code_id`), INDEX `idx_order_id` (`order_id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
-            }
+            $db->exec("CREATE TABLE IF NOT EXISTS `promo_code_usage` (
+                `id` INT AUTO_INCREMENT PRIMARY KEY, `promo_code_id` INT NOT NULL,
+                `order_id` INT NOT NULL, `order_number` VARCHAR(50) NOT NULL,
+                `customer_name` VARCHAR(255) DEFAULT NULL, `customer_phone` VARCHAR(20) DEFAULT NULL,
+                `order_total` DECIMAL(10,2) DEFAULT 0, `discount_given` DECIMAL(10,2) DEFAULT 0,
+                `commission_earned` DECIMAL(10,2) DEFAULT 0, `used_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                INDEX `idx_promo_code_id` (`promo_code_id`), INDEX `idx_order_id` (`order_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
             $msgs[] = "promo_code_usage table created";
         }
     } catch (Exception $e) {
@@ -172,10 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ============================================================
 $promos = [];
 try {
-    $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
-    $groupBy = ($driver === 'pgsql')
-        ? "GROUP BY p.id, p.code, p.influencer_name, p.influencer_email, p.discount_type, p.discount_value, p.max_discount, p.min_order, p.max_uses, p.used_count, p.commission_type, p.commission_value, p.expires_at, p.is_active, p.notes, p.created_at"
-        : "GROUP BY p.id";
+    $groupBy = "GROUP BY p.id";
     
     $promos = $db->query("
         SELECT p.*, 

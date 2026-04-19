@@ -158,7 +158,7 @@ class Order {
     }
 
     public static function updateShiprocketId($id, $shiprocketId) {
-        $stmt = db()->prepare("UPDATE orders SET notes = COALESCE(notes, '') || '\nShiprocket ID: ' || ? WHERE id = ?");
+        $stmt = db()->prepare("UPDATE orders SET notes = CONCAT(COALESCE(notes, ''), '\nShiprocket ID: ', ?) WHERE id = ?");
         return $stmt->execute([$shiprocketId, $id]);
     }
 

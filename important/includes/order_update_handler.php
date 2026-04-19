@@ -59,7 +59,7 @@ if ($orderNumber && $status) {
             $note = "\nStatus updated by Shiprocket: " . $status;
             $stmt = db()->prepare(
                 "UPDATE orders 
-                 SET notes = COALESCE(notes, '') || ? 
+                 SET notes = CONCAT(COALESCE(notes, ''), ?) 
                  WHERE id = ?"
             );
             $stmt->execute([$note, $order['id']]);

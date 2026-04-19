@@ -1,8 +1,20 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
+SET FOREIGN_KEY_CHECKS = 0;
+START TRANSACTION;
 
+DROP TABLE IF EXISTS `coin_transactions`;
+DROP TABLE IF EXISTS `reward_coins`;
+DROP TABLE IF EXISTS `pincodes`;
 DROP TABLE IF EXISTS `video_popups`;
+DROP TABLE IF EXISTS `contact_inquiries`;
+DROP TABLE IF EXISTS `promo_code_usage`;
+DROP TABLE IF EXISTS `promo_codes`;
+DROP TABLE IF EXISTS `order_items`;
+DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `admins`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `product_images`;
 DROP TABLE IF EXISTS `product_media`;
 DROP TABLE IF EXISTS `reviews`;
 DROP TABLE IF EXISTS `reels`;
@@ -12,23 +24,45 @@ DROP TABLE IF EXISTS `products`;
 DROP TABLE IF EXISTS `categories`;
 DROP TABLE IF EXISTS `settings`;
 
-CREATE TABLE `categories` (`id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `description` text, `image` varchar(255) DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `icon_class` varchar(100) DEFAULT 'fa-leaf', `icon_upload` varchar(255) DEFAULT NULL, `sort_order` int(11) DEFAULT 0, `is_active` tinyint(1) DEFAULT 1, `show_on_mobile_top_slider` tinyint(1) DEFAULT 1, `show_on_mobile_concern` tinyint(1) DEFAULT 1, `show_on_desktop_concern` tinyint(1) DEFAULT 1, `show_in_top_menu` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `slug` (`slug`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `categories` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `description` text, `image` varchar(255) DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `icon_class` varchar(100) DEFAULT 'fa-leaf', `icon_upload` varchar(255) DEFAULT NULL, `sort_order` int DEFAULT 0, `is_active` tinyint(1) DEFAULT 1, `show_on_mobile_top_slider` tinyint(1) DEFAULT 1, `show_on_mobile_concern` tinyint(1) DEFAULT 1, `show_on_desktop_concern` tinyint(1) DEFAULT 1, `show_in_top_menu` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `slug` (`slug`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `products` (`id` int(11) NOT NULL AUTO_INCREMENT, `category_id` int(11) DEFAULT NULL, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `sku` varchar(100) DEFAULT NULL, `price` decimal(10,2) NOT NULL, `mrp` decimal(10,2) DEFAULT NULL, `offer_price` decimal(10,2) DEFAULT 0.00, `offer_label` varchar(100) DEFAULT NULL, `short_description` text, `long_description` text, `benefits` text, `usage_instructions` text, `testing_info` text, `image` varchar(255) DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `stock_qty` int(11) DEFAULT 100, `stock_status` varchar(50) DEFAULT 'in_stock', `rating` decimal(3,2) DEFAULT 4.80, `reviews_count` int(11) DEFAULT 0, `reward_coins` int(11) DEFAULT 0, `is_featured` tinyint(1) DEFAULT 1, `is_active` tinyint(1) DEFAULT 1, `weight_kg` decimal(6,2) DEFAULT 0.50, `length_cm` decimal(6,2) DEFAULT 15.00, `width_cm` decimal(6,2) DEFAULT 10.00, `height_cm` decimal(6,2) DEFAULT 8.00, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `slug` (`slug`), KEY `category_id` (`category_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `products` (`id` int NOT NULL AUTO_INCREMENT, `category_id` int DEFAULT NULL, `name` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `sku` varchar(100) DEFAULT NULL, `price` decimal(10,2) NOT NULL, `mrp` decimal(10,2) DEFAULT NULL, `offer_price` decimal(10,2) DEFAULT 0.00, `offer_label` varchar(100) DEFAULT NULL, `short_description` text, `long_description` text, `benefits` text, `usage_instructions` text, `testing_info` text, `image` varchar(255) DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `stock_qty` int DEFAULT 100, `stock_status` varchar(50) DEFAULT 'in_stock', `rating` decimal(3,2) DEFAULT 4.80, `reviews_count` int DEFAULT 0, `reward_coins` int DEFAULT 0, `is_featured` tinyint(1) DEFAULT 1, `is_active` tinyint(1) DEFAULT 1, `weight_kg` decimal(6,2) DEFAULT 0.50, `length_cm` decimal(6,2) DEFAULT 15.00, `width_cm` decimal(6,2) DEFAULT 10.00, `height_cm` decimal(6,2) DEFAULT 8.00, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `slug` (`slug`), KEY `category_id` (`category_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `hero_slides` (`id` int(11) NOT NULL AUTO_INCREMENT, `badge` varchar(100) DEFAULT NULL, `title` varchar(255) DEFAULT NULL, `subtitle` text, `price` decimal(10,2) DEFAULT NULL, `discount` varchar(50) DEFAULT NULL, `image` varchar(255) DEFAULT NULL, `media_type` varchar(50) DEFAULT 'image', `media_url` varchar(255) DEFAULT NULL, `video_url` varchar(255) DEFAULT NULL, `button_text` varchar(100) DEFAULT 'SHOP NOW', `button_link` varchar(255) DEFAULT 'products.php', `display_order` int(11) DEFAULT 0, `is_active` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `hero_slides` (`id` int NOT NULL AUTO_INCREMENT, `badge` varchar(100) DEFAULT NULL, `title` varchar(255) DEFAULT NULL, `subtitle` text, `price` decimal(10,2) DEFAULT NULL, `discount` varchar(50) DEFAULT NULL, `image` varchar(255) DEFAULT NULL, `media_type` varchar(50) DEFAULT 'image', `media_url` varchar(255) DEFAULT NULL, `video_url` varchar(255) DEFAULT NULL, `button_text` varchar(100) DEFAULT 'SHOP NOW', `button_link` varchar(255) DEFAULT 'products.php', `display_order` int DEFAULT 0, `is_active` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `product_media` (`id` int(11) NOT NULL AUTO_INCREMENT, `product_id` int(11) NOT NULL, `media_type` varchar(50) DEFAULT 'image', `media_url` varchar(255) NOT NULL, `sort_order` int(11) DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `product_media` (`id` int NOT NULL AUTO_INCREMENT, `product_id` int NOT NULL, `media_type` varchar(50) DEFAULT 'image', `media_url` varchar(255) NOT NULL, `sort_order` int DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `product_id` (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `reviews` (`id` int(11) NOT NULL AUTO_INCREMENT, `product_id` int(11) DEFAULT NULL, `user_name` varchar(255) DEFAULT NULL, `rating` int(11) DEFAULT 5, `review_text` text, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `product_images` (`id` int NOT NULL AUTO_INCREMENT, `product_id` int NOT NULL, `image_path` varchar(255) NOT NULL, `is_primary` tinyint(1) DEFAULT 0, `display_order` int DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `product_id` (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `stories` (`id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `story_text` text, `rating` int(11) DEFAULT 5, `image_path` varchar(255) DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `reviews` (`id` int NOT NULL AUTO_INCREMENT, `product_id` int DEFAULT NULL, `user_name` varchar(255) DEFAULT NULL, `rating` int DEFAULT 5, `review_text` text, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `product_id` (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `reels` (`id` int(11) NOT NULL AUTO_INCREMENT, `product_id` int(11) DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `views` int(11) DEFAULT 0, `is_active` tinyint(1) DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `stories` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `story_text` text, `rating` int DEFAULT 5, `image_path` varchar(255) DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `settings` (`id` int(11) NOT NULL AUTO_INCREMENT, `key` varchar(100) NOT NULL, `value` text, `description` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `key` (`key`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `reels` (`id` int NOT NULL AUTO_INCREMENT, `product_id` int DEFAULT NULL, `video` varchar(255) DEFAULT NULL, `views` int DEFAULT 0, `is_active` tinyint(1) DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `product_id` (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `video_popups` (`id` int(11) NOT NULL AUTO_INCREMENT, `title` varchar(255) DEFAULT NULL, `video_url` varchar(255) DEFAULT NULL, `is_active` tinyint(1) DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `settings` (`id` int NOT NULL AUTO_INCREMENT, `key` varchar(100) NOT NULL, `value` text, `description` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `key` (`key`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `users` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `phone` varchar(20) DEFAULT NULL, `password` varchar(255) DEFAULT NULL, `password_hash` varchar(255) DEFAULT NULL, `reward_coins` int DEFAULT 0, `address` text DEFAULT NULL, `city` varchar(100) DEFAULT NULL, `state` varchar(100) DEFAULT NULL, `pincode` varchar(20) DEFAULT NULL, `is_active` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `email` (`email`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `admins` (`id` int NOT NULL AUTO_INCREMENT, `username` varchar(100) NOT NULL, `password_hash` varchar(255) NOT NULL, `email` varchar(255) DEFAULT NULL, `is_active` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `username` (`username`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `orders` (`id` int NOT NULL AUTO_INCREMENT, `order_number` varchar(100) DEFAULT NULL, `user_id` int DEFAULT NULL, `customer_name` varchar(255) DEFAULT NULL, `customer_email` varchar(255) DEFAULT NULL, `customer_phone` varchar(20) DEFAULT NULL, `shipping_address` text DEFAULT NULL, `city` varchar(100) DEFAULT NULL, `state` varchar(100) DEFAULT NULL, `pincode` varchar(20) DEFAULT NULL, `subtotal` decimal(10,2) DEFAULT 0.00, `shipping_fee` decimal(10,2) DEFAULT 0.00, `discount_amount` decimal(10,2) DEFAULT 0.00, `total_amount` decimal(10,2) DEFAULT 0.00, `payment_method` varchar(50) DEFAULT NULL, `payment_status` varchar(50) DEFAULT 'pending', `order_status` varchar(50) DEFAULT 'pending', `promo_code` varchar(50) DEFAULT NULL, `notes` text DEFAULT NULL, `payment_id` varchar(255) DEFAULT NULL, `bank_ref` varchar(255) DEFAULT NULL, `payment_response` text DEFAULT NULL, `transaction_id` varchar(255) DEFAULT NULL, `shiprocket_order_id` varchar(100) DEFAULT NULL, `shiprocket_shipment_id` varchar(100) DEFAULT NULL, `awb_code` varchar(100) DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `order_number` (`order_number`), KEY `user_id` (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `order_items` (`id` int NOT NULL AUTO_INCREMENT, `order_id` int NOT NULL, `product_id` int DEFAULT NULL, `product_name` varchar(255) DEFAULT NULL, `quantity` int DEFAULT 1, `price` decimal(10,2) DEFAULT 0.00, `total` decimal(10,2) DEFAULT 0.00, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `order_id` (`order_id`), KEY `product_id` (`product_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `promo_codes` (`id` int NOT NULL AUTO_INCREMENT, `code` varchar(50) NOT NULL, `influencer_name` varchar(100) DEFAULT NULL, `influencer_email` varchar(255) DEFAULT NULL, `discount_type` varchar(20) DEFAULT 'percentage', `discount_value` decimal(10,2) DEFAULT 0.00, `min_order` decimal(10,2) DEFAULT 0.00, `min_order_amount` decimal(10,2) DEFAULT 0.00, `max_discount` decimal(10,2) DEFAULT 0.00, `max_uses` int DEFAULT NULL, `usage_limit` int DEFAULT 0, `used_count` int DEFAULT 0, `commission_type` varchar(20) DEFAULT 'percentage', `commission_value` decimal(10,2) DEFAULT 0.00, `expires_at` timestamp NULL DEFAULT NULL, `expiry_date` date DEFAULT NULL, `is_active` tinyint(1) DEFAULT 1, `notes` text DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `code` (`code`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `promo_code_usage` (`id` int NOT NULL AUTO_INCREMENT, `promo_code_id` int NOT NULL, `order_id` int NOT NULL, `order_number` varchar(50) NOT NULL, `customer_name` varchar(255) DEFAULT NULL, `customer_phone` varchar(20) DEFAULT NULL, `order_total` decimal(10,2) DEFAULT 0.00, `discount_given` decimal(10,2) DEFAULT 0.00, `commission_earned` decimal(10,2) DEFAULT 0.00, `used_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `promo_code_id` (`promo_code_id`), KEY `order_id` (`order_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `contact_inquiries` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `phone` varchar(20) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `message` text DEFAULT NULL, `status` varchar(50) DEFAULT 'new', `handled_by` int DEFAULT NULL, `handled_at` timestamp NULL DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `video_popups` (`id` int NOT NULL AUTO_INCREMENT, `title` text, `video_url` varchar(255) DEFAULT NULL, `is_active` tinyint(1) DEFAULT 0, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `pincodes` (`id` int NOT NULL AUTO_INCREMENT, `pincode` varchar(10) NOT NULL, `delivery_days` int DEFAULT 3, `is_serviceable` tinyint(1) DEFAULT 1, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `pincode` (`pincode`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `reward_coins` (`id` int NOT NULL AUTO_INCREMENT, `user_id` int NOT NULL, `balance` int DEFAULT 0, `updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`id`), UNIQUE KEY `user_id` (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `coin_transactions` (`id` int NOT NULL AUTO_INCREMENT, `user_id` int NOT NULL, `amount` int NOT NULL, `transaction_type` varchar(50) NOT NULL, `description` varchar(255) DEFAULT NULL, `created_at` timestamp DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`id`), KEY `user_id` (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `categories` (`id`,`name`,`slug`,`description`,`icon_class`,`icon_upload`,`sort_order`,`is_active`,`show_on_mobile_top_slider`,`show_on_mobile_concern`,`show_on_desktop_concern`,`show_in_top_menu`) VALUES
 (1,'Health & Nutrition','health-nutrition','Premium supplements and everyday nutrition support','fa-capsules','health-nutrition.svg',1,1,1,1,1,1),
@@ -55,28 +89,24 @@ INSERT INTO `hero_slides` (`id`,`badge`,`title`,`subtitle`,`price`,`discount`,`i
 INSERT INTO `product_media` (`product_id`,`media_type`,`media_url`,`sort_order`) VALUES
 (1,'image','calamine-powder-200g.jpg',1),(2,'image','calcium-magnesium-zinc-d3.jpg',1),(3,'image','glutathione-vitamin-c-50-tablets.jpg',1),(4,'image','l-arginine-1500mg-120-tablets.jpg',1),(5,'image','l-glutamine-500mg-50-tablets.jpg',1),(6,'image','l-theanine-50-capsules.jpg',1),(7,'image','magnesium-oil-100ml.jpg',1),(8,'image','marine-collagen-orange-200g.jpg',1),(9,'image','multivitamins-men-50-tablets.jpg',1),(10,'image','multivitamins-teenagers-50-tablets.jpg',1);
 
-INSERT INTO `reviews` (`product_id`,`user_name`,`rating`,`review_text`) VALUES
-(7,'Riya Sharma',5,'This magnesium oil is absolutely amazing! I apply it on my feet every night and sleep so much better. My muscle cramps have reduced a lot. Highly recommend!'),
-(9,'Amit Kumar',5,'Great multivitamin for daily use. I have been taking it for 3 months and feel much more energetic. Good value for money from GLIMLACH.'),
-(3,'Priya Singh',5,'The glutathione tablets have helped with my skin glow. I take one daily and see visible improvement in my complexion after just 4 weeks.'),
-(2,'Sunita Devi',5,'Excellent calcium supplement. My doctor also approved it. Good quality and fast delivery. I can feel the difference in my bones after 2 months.'),
-(8,'Kavita Mehta',5,'Marine collagen tastes great with the orange flavour! My hair has become stronger and skin looks better after 6 weeks of daily use.'),
-(1,'Rohan Verma',4,'Calamine powder is very effective for summer rashes. Keeps skin dry and comfortable. Good product overall.'),
-(6,'Neha Gupta',5,'L-Theanine capsules help me stay calm during stressful work days. I feel focused without feeling drowsy. Very satisfied.'),
-(4,'Vikram Patel',5,'L-Arginine tablets are good for pre-workout. I noticed improved stamina after 3 weeks. Great product at this price.'),
-(5,'Anjali Rao',5,'L-Glutamine supports my recovery really well after gym sessions. Quality product with good packaging.'),
-(10,'Deepak Joshi',5,'My 16 year old son takes this teen multivitamin. He is more active and his stamina in sports has improved. Recommended!'),
-(7,'Sonal Tiwari',5,'Best magnesium oil I have used. Perfect for relaxation and sleep. GLIMLACH is now my go-to wellness brand.'),
-(9,'Rahul Sharma',4,'Good multivitamin with ginseng. I feel the difference in energy levels during the day. Will buy again.'),
-(3,'Meena Agarwal',5,'Skin has become so much brighter after taking glutathione. GLIMLACH glutathione is my beauty secret now!'),
-(8,'Pooja Verma',5,'Marine collagen is a game changer for my skin and hair. Delivery was also very fast. 5 stars!');
+INSERT INTO `reviews` (`id`,`product_id`,`user_name`,`rating`,`review_text`) VALUES
+(1,7,'Riya Sharma',5,'This magnesium oil is absolutely amazing! I apply it on my feet every night and sleep so much better. My muscle cramps have reduced a lot. Highly recommend!'),
+(2,9,'Amit Kumar',5,'Great multivitamin for daily use. I have been taking it for 3 months and feel much more energetic. Good value for money from GLIMLACH.'),
+(3,3,'Priya Singh',5,'The glutathione tablets have helped with my skin glow. I take one daily and see visible improvement in my complexion after just 4 weeks.'),
+(4,2,'Sunita Devi',5,'Excellent calcium supplement. My doctor also approved it. Good quality and fast delivery. I can feel the difference in my bones after 2 months.'),
+(5,8,'Kavita Mehta',5,'Marine collagen tastes great with the orange flavour! My hair has become stronger and skin looks better after 6 weeks of daily use.'),
+(6,1,'Rohan Verma',4,'Calamine powder is very effective for summer rashes. Keeps skin dry and comfortable. Good product overall.'),
+(7,6,'Neha Gupta',5,'L-Theanine capsules help me stay calm during stressful work days. I feel focused without feeling drowsy. Very satisfied.'),
+(8,4,'Vikram Patel',5,'L-Arginine tablets are good for pre-workout. I noticed improved stamina after 3 weeks. Great product at this price.'),
+(9,5,'Anjali Rao',5,'L-Glutamine supports my recovery really well after gym sessions. Quality product with good packaging.'),
+(10,10,'Deepak Joshi',5,'My 16 year old son takes this teen multivitamin. He is more active and his stamina in sports has improved. Recommended!');
 
-INSERT INTO `stories` (`name`,`story_text`,`rating`,`image_path`) VALUES
-('Neha','GLIMLACH products fit perfectly into my daily wellness routine. I use the magnesium oil every night and the multivitamins every morning. My energy levels have never been better!',5,'story-neha.png'),
-('Rohit','The nutrition range is easy to understand and affordable. GLIMLACH has the best quality at the best price in India. I recommend it to all my gym friends.',5,'story-rohit.png'),
-('Priya','I started using GLIMLACH Glutathione tablets 2 months ago and my skin looks radiant now. Totally worth every rupee!',5,'story-priya.png'),
-('Amit','Marine Collagen from GLIMLACH is fantastic. Orange taste is lovely and my joints feel so much better now.',5,'story-amit.png'),
-('Sunita','My whole family uses GLIMLACH supplements now. Calcium for me, multivitamins for my husband and teen pack for my kids. One brand for all!',5,'story-sunita.png');
+INSERT INTO `stories` (`id`,`name`,`story_text`,`rating`,`image_path`) VALUES
+(1,'Neha','GLIMLACH products fit perfectly into my daily wellness routine. I use the magnesium oil every night and the multivitamins every morning. My energy levels have never been better!',5,'story-neha.png'),
+(2,'Rohit','The nutrition range is easy to understand and affordable. GLIMLACH has the best quality at the best price in India. I recommend it to all my gym friends.',5,'story-rohit.png'),
+(3,'Priya','I started using GLIMLACH Glutathione tablets 2 months ago and my skin looks radiant now. Totally worth every rupee!',5,'story-priya.png'),
+(4,'Amit','Marine Collagen from GLIMLACH is fantastic. Orange taste is lovely and my joints feel so much better now.',5,'story-amit.png'),
+(5,'Sunita','My whole family uses GLIMLACH supplements now. Calcium for me, multivitamins for my husband and teen pack for my kids. One brand for all!',5,'story-sunita.png');
 
 INSERT INTO `settings` (`key`,`value`,`description`) VALUES
 ('site_name','GLIMLACH','Website Name'),
@@ -85,12 +115,20 @@ INSERT INTO `settings` (`key`,`value`,`description`) VALUES
 ('UPI_HOLDER_NAME','GLIMLACH','UPI Holder Name'),
 ('free_shipping_above','300','Free shipping threshold in rupees'),
 ('shipping_fee','50','Flat shipping fee in rupees'),
-('currency','?','Currency symbol'),
+('currency','₹','Currency symbol'),
 ('tagline','Wellness Starts with GLIMLACH','Site tagline'),
 ('contact_phone','+91 8958489684','Contact phone number'),
 ('contact_email','support@glimlach.in','Contact email address'),
 ('instagram_url','https://instagram.com/glimlach','Instagram profile URL'),
 ('facebook_url','https://facebook.com/glimlach','Facebook page URL'),
-('youtube_url','https://youtube.com/@glimlach','YouTube channel URL');
+('youtube_url','https://youtube.com/@glimlach','YouTube channel URL'),
+('reward_redeem_rate','1','Reward coin redeem rate');
+
+INSERT INTO `admins` (`id`,`username`,`password_hash`,`email`,`is_active`) VALUES
+(1,'admin','$2y$10$9OTr.ZAigLAZ.vadVAzuCOGpjgwXIFIkETtygXfSF2t9lBAAOsOiO','admin@glimlach.in',1);
+
+INSERT INTO `pincodes` (`pincode`,`delivery_days`,`is_serviceable`) VALUES
+('151001',3,1),('110001',3,1),('400001',3,1),('110044',3,1);
 
 COMMIT;
+SET FOREIGN_KEY_CHECKS = 1;

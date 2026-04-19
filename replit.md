@@ -1,11 +1,11 @@
 # GLIMLACH E-Commerce Platform
 
 ## Overview
-PHP 8.2 e-commerce wellness/supplements store for the Indian market. Runs on port 5000 via PHP built-in server. Uses Replit's built-in PostgreSQL database (with SQLite as local fallback).
+PHP 8.2 e-commerce wellness/supplements store for the Indian market. Runs on port 5000 via PHP built-in server. Uses MySQL/phpMyAdmin-compatible database only.
 
 ## Tech Stack
 - **Backend:** PHP 8.2 (native/procedural + OOP)
-- **Database:** PostgreSQL (Replit built-in) via DATABASE_URL secret; SQLite fallback for local dev
+- **Database:** MySQL via `MYSQL_*` environment variables or a `mysql://` database URL
 - **Frontend:** HTML5/CSS3, Tailwind CSS (CDN), Swiper.js, Glider.js, Lucide/Font Awesome icons
 - **Integrations:** Shiprocket (logistics), Razorpay/Cashfree/PayU/Instamojo (payments)
 
@@ -20,15 +20,16 @@ PHP 8.2 e-commerce wellness/supplements store for the Indian market. Runs on por
 - `important/uploads/` — product & story images
 
 ## Database
-- Replit PostgreSQL is the primary database (auto-initialized on first PHP request)
-- Tables auto-created: categories, products, product_media, reviews, hero_slides, stories, settings, orders, order_items, users, admins, promo_codes, promo_code_usage, contact_inquiries, reels, video_popups, pincodes
-- Seed data (10 products, 3 categories, 5 stories with real person images) auto-inserted if empty
+- MySQL is the primary database. Import `important/mysql_import.sql` in phpMyAdmin for a clean reset and fresh seed data.
+- Tables auto-created if missing: categories, products, product_media, product_images, reviews, hero_slides, stories, settings, orders, order_items, users, admins, promo_codes, promo_code_usage, contact_inquiries, reels, video_popups, pincodes, reward_coins, coin_transactions
+- Seed data (10 products, 3 categories, stories, settings, admin) auto-inserted if missing
 - Default admin: username=`admin`, password=`admin123`
 - Contact info: phone 8882728239, email support@glimlach.in, Delhi, Delhi, 110044
 
 ## Environment Variables / Secrets
-All sensitive credentials should be stored as Replit secrets:
-- `DATABASE_URL` — PostgreSQL connection (auto-set by Replit)
+All sensitive credentials should be stored as Replit secrets or hosting environment variables:
+- `MYSQL_HOST`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_PORT` — MySQL/phpMyAdmin database connection
+- Optional: `MYSQL_URL` or `DATABASE_URL` only if it starts with `mysql://`
 - `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` — Razorpay payment
 - `CASHFREE_CLIENT_ID`, `CASHFREE_CLIENT_SECRET`, `CASHFREE_ENV`
 - `PAYU_MERCHANT_KEY`, `PAYU_SALT`
